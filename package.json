@@ -50,9 +50,7 @@
     "typeface-open-sans": "^0.0.54",
     "yaml-loader": "^0.5.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -60,7 +58,8 @@
     "format": "prettier --write 'src/**/*.js'",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
-    "stylelint": "stylelint src/**/*.js"
+    "stylelint": "stylelint src/**/*.js",
+    "generate-app-icons": "sh ./scripts/generate-app-icons.sh"
   },
   "devDependencies": {
     "@mapbox/stylelint-processor-arbitrary-tags": "^0.2.0",
