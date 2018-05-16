@@ -13,6 +13,12 @@ Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus ege
 
 Praesent accumsan odio in ante ullamcorper id pellentesque mauris rhoncus. Duis vitae neque dolor. Duis sed purus at eros bibendum cursus nec a nulla. Donec turpis quam, ultricies id pretium sit amet, gravida eget leo.
 
+```JavaScript
+import { createMuiTheme } from "material-ui/styles";
+import Color from "color";
+import colors from "./colors";
+```
+
 Proin ornare ligula eu tellus tempus elementum. Aenean bibendum iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. Ut vel arcu ac tortor adipiscing hendrerit vel sed massa. Fusce sem libero, lacinia vulputate interdum non, porttitor non quam. Aliquam sed felis ligula. Duis non nulla magna.
 
 ### Donec hendrerit laoreet risus eget adipiscing.
