@@ -45,8 +45,7 @@ const PostTemplate = props => {
 
 PostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  pathContext: PropTypes.object.isRequired
 };
 
 export default PostTemplate;
