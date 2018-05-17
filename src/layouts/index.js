@@ -87,10 +87,15 @@ class Layout extends React.Component {
           <ScreenWidthContext.Provider value={this.state.screenWidth}>
             <React.Fragment>
               <Header path={this.props.location.pathname} pages={pages} theme={this.state.theme} />
-              {children()}
+              <main>{children()}</main>
               <Footer html={footnoteHTML} theme={this.state.theme} />
 
               {/* --- STYLES --- */}
+              <style jsx>{`
+                main {
+                  min-height: 80vh;
+                }
+              `}</style>
               <style jsx global>{`
                 html {
                   box-sizing: border-box;

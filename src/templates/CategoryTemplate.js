@@ -4,10 +4,9 @@ import React from "react";
 
 import Seo from "../components/Seo";
 import { ThemeContext } from "../layouts";
-import Article from "../components/Main/Article";
-import Headline from "../components/Main/Headline";
+import Article from "../components/Article";
+import Headline from "../components/Article/Headline";
 import List from "../components/List";
-import Main from "../components/Main";
 
 const CategoryTemplate = props => {
   const {
@@ -22,30 +21,28 @@ const CategoryTemplate = props => {
 
   return (
     <React.Fragment>
-      <Main>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Article theme={theme}>
-              <header>
-                <Headline theme={theme}>
-                  <span>Posts in category</span> <FaTag />
-                  {category}
-                </Headline>
-                <p className="meta">
-                  There {totalCount > 1 ? "are" : "is"} <strong>{totalCount}</strong> post{totalCount >
-                  1
-                    ? "s"
-                    : ""}{" "}
-                  in the category.
-                </p>
-                <List edges={edges} theme={theme} />
-              </header>
-            </Article>
-          )}
-        </ThemeContext.Consumer>
+      <ThemeContext.Consumer>
+        {theme => (
+          <Article theme={theme}>
+            <header>
+              <Headline theme={theme}>
+                <span>Posts in category</span> <FaTag />
+                {category}
+              </Headline>
+              <p className="meta">
+                There {totalCount > 1 ? "are" : "is"} <strong>{totalCount}</strong> post{totalCount >
+                1
+                  ? "s"
+                  : ""}{" "}
+                in the category.
+              </p>
+              <List edges={edges} theme={theme} />
+            </header>
+          </Article>
+        )}
+      </ThemeContext.Consumer>
 
-        <Seo facebook={facebook} />
-      </Main>
+      <Seo facebook={facebook} />
     </React.Fragment>
   );
 };

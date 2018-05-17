@@ -4,8 +4,7 @@ import React from "react";
 require("prismjs/themes/prism-okaidia.css");
 
 import Seo from "../components/Seo";
-import Main from "../components/Main";
-import Article from "../components/Main/Article";
+import Article from "../components/Article";
 import Post from "../components/Post";
 import { ThemeContext } from "../layouts";
 
@@ -22,7 +21,7 @@ const PostTemplate = props => {
   } = props;
 
   return (
-    <Main>
+    <React.Fragment>
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
@@ -39,7 +38,7 @@ const PostTemplate = props => {
       </ThemeContext.Consumer>
 
       <Seo data={post} facebook={facebook} />
-    </Main>
+    </React.Fragment>
   );
 };
 

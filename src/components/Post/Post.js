@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import "prismjs/themes/prism-okaidia.css";
 
 import asyncComponent from "../AsyncComponent";
-import Headline from "../Main/Headline";
-import Bodytext from "../Main/Bodytext";
+import Headline from "../Article/Headline";
+import Bodytext from "../Article/Bodytext";
 import Meta from "./Meta";
 import Author from "./Author";
 import Comments from "./Comments";

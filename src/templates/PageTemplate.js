@@ -2,8 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Seo from "../components/Seo";
-import Main from "../components/Main";
-import Article from "../components/Main/Article";
+import Article from "../components/Article";
 import Page from "../components/Page";
 import { ThemeContext } from "../layouts";
 
@@ -18,7 +17,7 @@ const PageTemplate = props => {
   } = props;
 
   return (
-    <Main>
+    <React.Fragment>
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
@@ -28,7 +27,7 @@ const PageTemplate = props => {
       </ThemeContext.Consumer>
 
       <Seo data={page} facebook={facebook} />
-    </Main>
+    </React.Fragment>
   );
 };
 

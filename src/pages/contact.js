@@ -2,10 +2,9 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { ThemeContext } from "../layouts";
-import Article from "../components/Main/Article";
+import Article from "../components/Article";
 import Contact from "../components/Contact";
-import Headline from "../components/Main/Headline";
-import Main from "../components/Main";
+import Headline from "../components/Article/Headline";
 import Seo from "../components/Seo";
 
 const ContactPage = props => {
@@ -18,7 +17,7 @@ const ContactPage = props => {
   } = props;
 
   return (
-    <Main>
+    <React.Fragment>
       <ThemeContext.Consumer>
         {theme => (
           <Article theme={theme}>
@@ -31,7 +30,7 @@ const ContactPage = props => {
       </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </Main>
+    </React.Fragment>
   );
 };
 

@@ -3,10 +3,9 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { ThemeContext } from "../layouts";
-import Article from "../components/Main/Article";
-import Headline from "../components/Main/Headline";
+import Article from "../components/Article/";
+import Headline from "../components/Article/Headline";
 import List from "../components/List";
-import Main from "../components/Main";
 import Seo from "../components/Seo";
 
 const CategoryPage = props => {
@@ -44,37 +43,35 @@ const CategoryPage = props => {
 
   return (
     <React.Fragment>
-      <Main>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Article theme={theme}>
-              <header>
-                <Headline title="Posts by categories" theme={theme} />
-              </header>
-              {categoryList.map(item => (
-                <section key={item[0]}>
-                  <h2>
-                    <FaTag /> {item[0]}
-                  </h2>
-                  <List edges={item[1]} theme={theme} />
-                </section>
-              ))}
-              {/* --- STYLES --- */}
-              <style jsx>{`
-                h2 {
-                  margin: 0 0 0.5em;
-                }
-                h2 :global(svg) {
-                  height: 0.8em;
-                  fill: ${theme.color.brand.primary};
-                }
-              `}</style>
-            </Article>
-          )}
-        </ThemeContext.Consumer>
+      <ThemeContext.Consumer>
+        {theme => (
+          <Article theme={theme}>
+            <header>
+              <Headline title="Posts by categories" theme={theme} />
+            </header>
+            {categoryList.map(item => (
+              <section key={item[0]}>
+                <h2>
+                  <FaTag /> {item[0]}
+                </h2>
+                <List edges={item[1]} theme={theme} />
+              </section>
+            ))}
+            {/* --- STYLES --- */}
+            <style jsx>{`
+              h2 {
+                margin: 0 0 0.5em;
+              }
+              h2 :global(svg) {
+                height: 0.8em;
+                fill: ${theme.color.brand.primary};
+              }
+            `}</style>
+          </Article>
+        )}
+      </ThemeContext.Consumer>
 
-        <Seo facebook={facebook} />
-      </Main>
+      <Seo facebook={facebook} />
     </React.Fragment>
   );
 };

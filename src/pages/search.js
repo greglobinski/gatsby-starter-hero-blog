@@ -3,8 +3,7 @@ import React from "react";
 
 require("core-js/fn/array/find");
 
-import Main from "../components/Main";
-import Article from "../components/Main/Article";
+import Article from "../components/Article";
 import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
@@ -22,20 +21,19 @@ const SearchPage = props => {
 
   return (
     <React.Fragment>
-      <Main>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Article theme={theme}>
-              <div className="icon">
-                <AlgoliaIcon />
-              </div>
+      <ThemeContext.Consumer>
+        {theme => (
+          <Article theme={theme}>
+            <div className="icon">
+              <AlgoliaIcon />
+            </div>
 
-              <Search algolia={algolia} theme={theme} />
-            </Article>
-          )}
-        </ThemeContext.Consumer>
-        <Seo facebook={facebook} />
-      </Main>
+            <Search algolia={algolia} theme={theme} />
+          </Article>
+        )}
+      </ThemeContext.Consumer>
+
+      <Seo facebook={facebook} />
 
       {/* --- STYLES --- */}
       <style jsx>{`
