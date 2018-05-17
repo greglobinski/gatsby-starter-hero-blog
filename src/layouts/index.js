@@ -40,8 +40,6 @@ class Layout extends React.Component {
     if (typeof window !== "undefined") {
       window.addEventListener("resize", this.resizeThrottler, false);
     }
-
-    console.log(this.state);
   }
 
   resizeThrottler = () => {
