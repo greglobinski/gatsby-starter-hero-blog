@@ -15,7 +15,7 @@ A [GatsbyJS](https://www.gatsbyjs.org/) blog starter. <br /><br />
 
   <br />
 
-See the starter in action » [demo website](https://gatsby-starter-hero-blog.greglobinski.com/) <br />For more information visit » [dev.greglobinski.com/gatsby-starter-peherorsonal-blog](https://dev.greglobinski.com/gatsby-starter-hero-blog/)
+See the starter in action » [demo website](https://gatsby-starter-hero-blog.greglobinski.com/) <br />For more information visit » [dev.greglobinski.com/gatsby-starter-hero-blog](https://dev.greglobinski.com/gatsby-starter-hero-blog/)
 
 ## Description
 
@@ -34,11 +34,11 @@ A ready to use, easy to customize 'like theme' starter with a 'Hero' section on 
 * **Contact** form (Netlify form handling)
 * Form elements and validation with `ant-design`
 * **RSS** feed
-* 100% **PWA** (manifes.json, offline support, favicons)
+* 100% **PWA** (manifest.webmanifest, offline support, favicons)
 * Google **Analytics**
 * App **favicons** generator (node script)
 * Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
-* React v.16 (gatsby-plugin-react-next)
+* React **v.16.3** (gatsby-plugin-react-next)
 * **Components** leazy loading (social sharing)
 * **ESLint** (google config)
 * **Prettier** code styling

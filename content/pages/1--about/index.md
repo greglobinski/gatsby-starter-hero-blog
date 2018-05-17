@@ -18,11 +18,11 @@ The starter is a ready to use, easy to customize 'like theme' starter. All
 * Full text **searching** (Algolia)
 * **Contact** form (Netlify form handling)
 * **RSS** feed
-* 100% **PWA** (manifes.json, offline support, favicons)
+* 100% **PWA** (manifest.webmanifest, offline support, favicons)
 * Google **Analytics**
 * App **favicons** generator (node script)
 * Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
-* React v.16 (gatsby-plugin-react-next)
+* React **v.16** (gatsby-plugin-react-next)
 * **Components** leazy loading (social sharing)
 * **ESLint** (google config)
 * **Prettier** code styling
