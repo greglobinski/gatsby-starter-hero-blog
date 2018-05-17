@@ -3,9 +3,9 @@ title: Other GatsbyJS starters
 menuTitle: Starters
 ---
 
-**ClassicBlog** is not my first [GatsbyJS](https://www.gatsbyjs.org/) starter.
+**HeroBlog** is not my first [GatsbyJS](https://www.gatsbyjs.org/) starter.
 
-### HeroBlog
+### PersonalBlog
 
 ![PersonalBlog](./gatsby-starter-personal-blog.png)
 
