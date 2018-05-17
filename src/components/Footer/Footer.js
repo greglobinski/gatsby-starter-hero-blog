@@ -11,7 +11,7 @@ const Footer = props => {
       {/* --- STYLES --- */}
       <style jsx>{`
         .footer {
-          background: ${theme.color.neutral.white});
+          background: ${theme.color.neutral.white};
           padding: ${theme.space.inset.default};
           padding-top: 0;
           padding-bottom: 120px;
@@ -32,7 +32,7 @@ const Footer = props => {
               &::after {
                 content: "•";
                 position: absolute;
-                right: ${`calc(v${theme.space.xxs} * -1)`};
+                right: ${`calc(${theme.space.xxs} * -1)`};
               }
               &:last-child::after {
                 content: "";
