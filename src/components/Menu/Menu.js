@@ -75,7 +75,6 @@ class Menu extends React.Component {
 
     const itemsContainer = this.itemList.current;
     const maxWidth = itemsContainer.offsetWidth - PADDING_AND_SPACE_FOR_MORELINK;
-    console.log(` ${maxWidth} = ${itemsContainer.offsetWidth} - ${PADDING_AND_SPACE_FOR_MORELINK}`);
 
     this.setState({ hiddenItems: [] }); // clears previous state
 
