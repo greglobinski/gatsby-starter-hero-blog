@@ -11,9 +11,9 @@ Proin suscipit luctus orci placerat fringilla. Donec hendrerit laoreet risus ege
 
 ### Vestibulum orci tortor, sollicitudin ac euismod non, placerat ac augue.
 
-Praesent accumsan odio in ante ullamcorper id pellentesque mauris rhoncus. Duis vitae neque dolor. Duis sed purus at eros bibendum cursus nec a nulla. Donec turpis quam, ultricies id pretium sit amet, gravida eget leo.
+Praesent accumsan odio in ante ullamcorper id pellentesque mauris rhoncus. Duis vitae neque dolor. Duis sed purus at eros `bibendum cursus` nec a nulla. Donec turpis quam, ultricies id pretium sit amet, gravida eget leo.
 
-```JavaScript
+```javascript
 import { createMuiTheme } from "material-ui/styles";
 import Color from "color";
 import colors from "./colors";
