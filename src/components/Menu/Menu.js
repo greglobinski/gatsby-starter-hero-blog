@@ -264,7 +264,7 @@ class Menu extends React.Component {
               :global(.homepage):not(.fixed) & {
                 border: 1px solid transparent;
                 background: color(white alpha(-10%));
-                top: 60px;
+                top: 50px;
 
                 &:after {
                   top: -11px;
@@ -275,7 +275,7 @@ class Menu extends React.Component {
               }
 
               :global(.fixed) & {
-                top: 50px;
+                top: 44px;
               }
             }
           }
