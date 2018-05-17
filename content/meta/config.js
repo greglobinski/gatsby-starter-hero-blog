@@ -15,7 +15,7 @@ module.exports = {
   // manifest.json
   manifestName: "HeroBlog - a GatsbyJS starter",
   manifestShortName: "HeroBlog", // max 12 characters
-  manifestStartUrl: "/",
+  manifestStartUrl: "/index.html",
   manifestBackgroundColor: "white",
   manifestThemeColor: "#666",
   manifestDisplay: "standalone",
