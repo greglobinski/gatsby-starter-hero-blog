@@ -4,8 +4,6 @@ title: About
 
 This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
 
-The starter is a ready to use, easy to customize 'like theme' starter. All
-
 ### Features:
 
 * Easy editable content in **Markdown** files (posts, pages and parts)
