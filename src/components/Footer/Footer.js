@@ -17,10 +17,8 @@ const Footer = props => {
           padding-bottom: 120px;
 
           :global(ul) {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
             list-style: none;
+            text-align: center;
             padding: 0;
 
             :global(li) {
@@ -28,11 +26,12 @@ const Footer = props => {
               font-size: ${theme.font.size.xxs};
               padding: ${theme.space.xxs} ${theme.space.s};
               position: relative;
+              display: inline-block;
 
               &::after {
                 content: "•";
                 position: absolute;
-                right: ${`calc(${theme.space.xxs} * -1)`};
+                right: ${`calc(${theme.space.xs} * -1)`};
               }
               &:last-child::after {
                 content: "";
