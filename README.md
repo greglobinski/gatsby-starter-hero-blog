@@ -38,6 +38,7 @@ A ready to use, easy to customize 'like theme' starter with a 'Hero' section on 
 * Google **Analytics**
 * App **favicons** generator (node script)
 * Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
+* React v.16 (gatsby-plugin-react-next)
 * **Components** leazy loading (social sharing)
 * **ESLint** (google config)
 * **Prettier** code styling
