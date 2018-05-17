@@ -9,9 +9,9 @@ import React from "react";
 
 const FormItem = Form.Item;
 const { TextArea } = Input;
-import formStyle from "antd/lib/form/style/index.css";
-import inputStyle from "antd/lib/input/style/index.css";
-import buttonStyle from "antd/lib/button/style/index.css";
+import "antd/lib/form/style/index.css";
+import "antd/lib/input/style/index.css";
+import "antd/lib/button/style/index.css";
 import { ThemeContext } from "../../layouts";
 
 const Contact = props => {
@@ -123,7 +123,6 @@ const Contact = props => {
                   height: auto;
                   font-size: 1.2em;
                   padding: 0.5em 0.6em;
-                  font-family: "Open Sans";
                 }
                 .form :global(.ant-btn-primary) {
                   height: auto;
