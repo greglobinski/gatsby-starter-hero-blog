@@ -2,11 +2,11 @@
 title: About
 ---
 
-This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJs](https://www.gatsbyjs.org/) starter.
+This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
 
 The starter is a ready to use, easy to customize 'like theme' starter. All
 
-### Standard features:
+### Features:
 
 * Easy editable content in **Markdown** files (posts, pages and parts)
 * **CSS** with `styled-jsx` and `PostCSS`
@@ -21,10 +21,8 @@ The starter is a ready to use, easy to customize 'like theme' starter. All
 * 100% **PWA** (manifes.json, offline support, favicons)
 * Google **Analytics**
 * App **favicons** generator (node script)
-
-### Advanced features:
-
 * Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
+* React v.16 (gatsby-plugin-react-next)
 * **Components** leazy loading (social sharing)
 * **ESLint** (google config)
 * **Prettier** code styling
