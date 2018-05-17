@@ -109,8 +109,10 @@ class Menu extends React.Component {
         const oldClass = this.state.open ? "showItem" : "hideItem";
         const newClass = this.state.open ? "hideItem" : "showItem";
 
-        item.classList.add(newClass);
-        item.classList.remove(oldClass);
+        if (item.classList.contains(oldClass)) {
+          item.classList.add(newClass);
+          item.classList.remove(oldClass);
+        }
       });
     }
 
@@ -122,8 +124,10 @@ class Menu extends React.Component {
       this.setState({ open: false });
       if (this.props.screenWidth < 1024) {
         this.renderedItems.map(item => {
-          item.classList.add("hideItem");
-          item.classList.remove("item");
+          if (item.classList.contains("showItem")) {
+            item.classList.add("hideItem");
+            item.classList.remove("item");
+          }
         });
       }
     }
@@ -174,7 +178,7 @@ class Menu extends React.Component {
             flex-grow: 1;
             left: 0;
             max-height: ${open ? "1000px" : "50px"};
-            padding: ${theme.space.inset.s};
+            padding: 0 ${theme.space.inset.s};
             position: fixed;
             width: 100%;
             transition: all 0.5s;
