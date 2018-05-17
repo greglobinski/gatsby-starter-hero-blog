@@ -21,7 +21,7 @@ This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-sta
 * App **favicons** generator (node script)
 * Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
 * React **v.16** (gatsby-plugin-react-next)
-* **Components** leazy loading (social sharing)
+* **Components** lazy loading (social sharing)
 * **ESLint** (google config)
 * **Prettier** code styling
 * Webpack `BundleAnalyzerPlugin`
