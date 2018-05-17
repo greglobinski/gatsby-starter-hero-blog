@@ -58,6 +58,9 @@ class Menu extends React.Component {
       this.props.screenWidth !== prevProps.screenWidth ||
       this.props.fontLoaded !== prevProps.fontLoaded
     ) {
+      if (this.props.path !== prevProps.path) {
+        this.closeMenu();
+      }
       this.hideOverflowedMenuItems();
     }
   }
@@ -72,6 +75,7 @@ class Menu extends React.Component {
 
     const itemsContainer = this.itemList.current;
     const maxWidth = itemsContainer.offsetWidth - PADDING_AND_SPACE_FOR_MORELINK;
+    console.log(` ${maxWidth} = ${itemsContainer.offsetWidth} - ${PADDING_AND_SPACE_FOR_MORELINK}`);
 
     this.setState({ hiddenItems: [] }); // clears previous state
 
@@ -120,6 +124,8 @@ class Menu extends React.Component {
   };
 
   closeMenu = e => {
+    //e.preventDefault();
+
     if (this.state.open) {
       this.setState({ open: false });
       if (this.props.screenWidth < 1024) {
@@ -142,13 +148,7 @@ class Menu extends React.Component {
         <nav className={`menu ${open ? "open" : ""}`} rel="js-menu">
           <ul className="itemList" ref={this.itemList}>
             {this.items.map(item => (
-              <Item
-                item={item}
-                key={item.label}
-                onClick={this.closeMenu}
-                icon={item.icon}
-                theme={theme}
-              />
+              <Item item={item} key={item.label} icon={item.icon} theme={theme} />
             ))}
           </ul>
           {this.state.hiddenItems.length > 0 && <Expand onClick={this.toggleMenu} theme={theme} />}
@@ -156,13 +156,7 @@ class Menu extends React.Component {
             screenWidth >= 1024 && (
               <ul className="hiddenItemList">
                 {this.state.hiddenItems.map(item => (
-                  <Item
-                    item={item}
-                    key={item.label}
-                    hiddenItem
-                    onClick={this.closeMenu}
-                    theme={theme}
-                  />
+                  <Item item={item} key={item.label} hiddenItem theme={theme} />
                 ))}
               </ul>
             )}
@@ -181,8 +175,8 @@ class Menu extends React.Component {
             padding: 0 ${theme.space.inset.s};
             position: fixed;
             width: 100%;
-            transition: all 0.5s;
             z-index: 1;
+            transition: all ${theme.time.duration.default};
           }
 
           .itemList {
@@ -226,6 +220,7 @@ class Menu extends React.Component {
               position: relative;
               justify-content: flex-end;
               padding-left: 50px;
+              transition: none;
             }
 
             .itemList {
@@ -239,7 +234,7 @@ class Menu extends React.Component {
               position: absolute;
               background: ${theme.background.color.primary};
               border: 1px solid ${theme.line.color};
-              top: 58px;
+              top: 48px;
               right: ${theme.space.s};
               display: flex;
               flex-direction: column;
@@ -247,6 +242,7 @@ class Menu extends React.Component {
               padding: ${theme.space.m};
               border-radius: ${theme.size.radius.small};
               border-top-right-radius: 0;
+
 
               &:after {
                 content: "";
