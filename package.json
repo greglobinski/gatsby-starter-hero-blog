@@ -4,6 +4,7 @@
   "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@svgr/webpack": "^2.0.0",
     "antd": "^3.5.2",
     "fontfaceobserver": "^2.0.13",
     "gatsby": "^1.9.261",
@@ -79,7 +80,6 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.8.2",
-    "gatsby-plugin-svgr": "^1.0.0",
     "json-loader": "^0.5.7",
     "postcss": "^6.0.22",
     "postcss-cli": "^5.0.0",
