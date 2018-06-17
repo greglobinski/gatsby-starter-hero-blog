@@ -8,7 +8,7 @@ import Search from "../components/Search";
 import { ThemeContext } from "../layouts";
 import Seo from "../components/Seo";
 
-import { ReactComponent as AlgoliaIcon } from "../images/svg-icons/search-by-algolia.svg";
+import AlgoliaIcon from "!svg-react-loader!../images/svg-icons/search-by-algolia.svg?name=AlgoliaLogo";
 
 const SearchPage = props => {
   const {
