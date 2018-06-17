@@ -1,6 +1,6 @@
 {
   "name": "gatsby-starter-hero-blog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Greg Lobinski <greglobinski@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -51,9 +51,7 @@
     "typeface-open-sans": "^0.0.54",
     "yaml-loader": "^0.5.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
