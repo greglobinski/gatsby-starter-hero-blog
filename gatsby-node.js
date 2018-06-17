@@ -171,6 +171,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 
   return config;
 };
+
 exports.modifyBabelrc = ({ babelrc }) => {
   return {
     ...babelrc,
