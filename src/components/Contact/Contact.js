@@ -58,7 +58,7 @@ const Contact = props => {
       <div className="form">
         <ThemeContext.Consumer>
           {theme => (
-            <Form onSubmit={handleSubmit} data-netlify="true" data-netlify-honeypot="bot-field">
+            <Form name="contact" onSubmit={handleSubmit} data-netlify="true" data-netlify-honeypot="bot-field">
               <FormItem label="Name">
                 {getFieldDecorator("name", {
                   rules: [
@@ -66,7 +66,7 @@ const Contact = props => {
                       whitespace: true
                     }
                   ]
-                })(<Input />)}
+                })(<Input name="name"/>)}
               </FormItem>
               <FormItem label="E-mail">
                 {getFieldDecorator("email", {
@@ -78,7 +78,7 @@ const Contact = props => {
                       type: "email"
                     }
                   ]
-                })(<Input />)}
+                })(<Input name="email"/>)}
               </FormItem>
               <FormItem label="Message">
                 {getFieldDecorator("message", {
@@ -87,6 +87,7 @@ const Contact = props => {
                   ]
                 })(
                   <TextArea
+                    name="message"
                     placeholder="Autosize height with minimum and maximum number of lines"
                     autosize={{ minRows: 4, maxRows: 10 }}
                   />
