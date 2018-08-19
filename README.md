@@ -97,7 +97,7 @@ FB_APP_ID=...
 
 * [How to install, setup and add new content to a Blog starter](https://dev.greglobinski.com/install-blog-starter/)
 * [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
-* More articles soon at [Front-end web development with Greg](https://dev.greglobinski.com/gatsby-starter-hero-blog/)
+* More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
 
 ## Windows users
 
