@@ -23,6 +23,18 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       value: separtorIndex ? slug.substring(1, separtorIndex) : ""
     });
   }
+  if (node.internal.type === 'JupyterNotebook') {
+    const slug = createFilePath({
+      node,
+      getNode,
+      basePath: `notebooks`
+    })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
@@ -32,6 +44,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
     const pageTemplate = path.resolve("./src/templates/PageTemplate.js");
     const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
+    const notebookTemplate = path.resolve("./src/templates/NotebookTemplate.js");
     resolve(
       graphql(
         `
@@ -55,6 +68,15 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                 }
               }
             }
+            allJupyterNotebook {
+              edges {
+                node {
+                  fields {
+                    slug
+                  }
+                }
+              }
+            }
           }
         `
       ).then(result => {
@@ -64,6 +86,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         const items = result.data.allMarkdownRemark.edges;
+        const notebooks = result.data.allJupyterNotebook.edges;
 
         // Create category list
         const categorySet = new Set();
@@ -122,6 +145,18 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             }
           });
         });
+
+        // and notebooks.
+        notebooks.forEach(({ node }) => {
+          const slug = node.fields.slug
+          createPage({
+            path: slug,
+            component: notebookTemplate,
+            context: {
+              slug
+            },
+          });
+        }); 
       })
     );
   });
