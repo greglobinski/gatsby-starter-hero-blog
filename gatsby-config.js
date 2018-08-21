@@ -90,9 +90,17 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `notebooks`,
+        path: `${__dirname}/content/notebooks/`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+        	`gatsby-remark-katex`,
           `gatsby-plugin-sharp`,
           {
             resolve: `gatsby-remark-images`,
@@ -255,6 +263,7 @@ module.exports = {
       options: {
         include: /svg-icons/
       }
-    }
+    },
+    `@nteract/gatsby-transformer-ipynb`
   ]
 };
