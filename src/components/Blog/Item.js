@@ -3,7 +3,7 @@ import FaCalendar from "react-icons/lib/fa/calendar";
 import FaTag from "react-icons/lib/fa/tag";
 import FaUser from "react-icons/lib/fa/user";
 import Img from "gatsby-image";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
