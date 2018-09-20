@@ -1,7 +1,7 @@
 import FaTag from "react-icons/lib/fa/tag";
 import PropTypes from "prop-types";
 import React from "react";
-
+import { graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article/";
 import Headline from "../components/Article/Headline";
