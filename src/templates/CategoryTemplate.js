@@ -10,7 +10,7 @@ import List from "../components/List";
 
 const CategoryTemplate = props => {
   const {
-    pathContext: { category },
+    pageContext: { category },
     data: {
       allMarkdownRemark: { totalCount, edges },
       site: {
@@ -49,7 +49,7 @@ const CategoryTemplate = props => {
 
 CategoryTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export default CategoryTemplate;

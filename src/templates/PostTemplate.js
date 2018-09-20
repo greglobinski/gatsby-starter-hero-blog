@@ -17,7 +17,7 @@ const PostTemplate = props => {
         siteMetadata: { facebook }
       }
     },
-    pathContext: { next, prev }
+    pageContext: { next, prev }
   } = props;
 
   return (
@@ -44,7 +44,7 @@ const PostTemplate = props => {
 
 PostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 };
 
 export default PostTemplate;
