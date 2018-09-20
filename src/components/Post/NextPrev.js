@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 
 import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import FaArrowLeft from "react-icons/lib/fa/arrow-left";

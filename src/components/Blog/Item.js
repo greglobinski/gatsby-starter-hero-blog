@@ -3,7 +3,7 @@ import FaCalendar from "react-icons/lib/fa/calendar";
 import FaTag from "react-icons/lib/fa/tag";
 import FaUser from "react-icons/lib/fa/user";
 import Img from "gatsby-image";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -18,7 +18,7 @@ const Item = props => {
         category,
         author,
         cover: {
-          children: [{ sizes }]
+          children: [{ fluid }]
         }
       }
     }
@@ -28,7 +28,7 @@ const Item = props => {
     <React.Fragment>
       <li>
         <Link to={slug} key={slug} className="link">
-          <Img sizes={sizes} />
+          <Img fluid={fluid} />
           <h1>
             {title} <FaArrowRight className="arrow" />
           </h1>

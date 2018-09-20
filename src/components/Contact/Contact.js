@@ -1,6 +1,6 @@
 /* eslint no-unused-vars: 0 */
 
-import { navigateTo } from "gatsby-link";
+import { navigate } from "gatsby";
 import Button from "antd/lib/button";
 import Form from "antd/lib/form";
 import Input from "antd/lib/input";
@@ -41,7 +41,7 @@ const Contact = props => {
     })
       .then(() => {
         console.log("Form submission success");
-        navigateTo("/success");
+        navigate("/success");
       })
       .catch(error => {
         console.error("Form submission error:", error);
