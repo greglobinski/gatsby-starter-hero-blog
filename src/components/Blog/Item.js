@@ -18,7 +18,7 @@ const Item = props => {
         category,
         author,
         cover: {
-          children: [{ sizes }]
+          children: [{ fluid }]
         }
       }
     }
@@ -28,7 +28,7 @@ const Item = props => {
     <React.Fragment>
       <li>
         <Link to={slug} key={slug} className="link">
-          <Img sizes={sizes} />
+          <Img fluid={fluid} />
           <h1>
             {title} <FaArrowRight className="arrow" />
           </h1>
