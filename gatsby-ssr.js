@@ -1,4 +1,4 @@
-import flush from "styled-jsx/server";
+const flush = require("styled-jsx/server");
 
 exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
   if (process.env.NODE_ENV === `production`) {
