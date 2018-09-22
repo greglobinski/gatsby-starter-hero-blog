@@ -127,98 +127,76 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  switch (stage) {
-    case "build-javascript":
-      {
-        // let components = store.getState().pages.map(page => page.componentChunkName);
-        // components = _.uniq(components);
-        // config.plugin("CommonsChunkPlugin", webpack.optimize.CommonsChunkPlugin, [
-        //   {
-        //     name: `commons`,
-        //     chunks: [`app`, ...components],
-        //     minChunks: (module, count) => {
-        //       const vendorModuleList = []; // [`material-ui`, `lodash`];
-        //       const isFramework = _.some(
-        //         vendorModuleList.map(vendor => {
-        //           const regex = new RegExp(`[\\\\/]node_modules[\\\\/]${vendor}[\\\\/].*`, `i`);
-        //           return regex.test(module.resource);
-        //         })
-        //       );
-        //       return isFramework || count > 1;
-        //     }
-        //   }
-        // ]);
-
-        config.plugin("BundleAnalyzerPlugin", BundleAnalyzerPlugin, [
+exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
+  if (options.disable) return;
+  if (stage === "develop" || (options.production && stage === "build-javascript")) {
+    actions.setWebpackConfig({
+      plugins: [
+        new BundleAnalyzerPlugin({
+          analyzerMode: "static",
+          reportFilename: "./report/treemap.html",
+          openAnalyzer: true,
+          logLevel: "error",
+          defaultSizes: "gzip"
+        })
+      ]
+    });
+    actions.setWebpackConfig({
+      module: {
+        rules: [
           {
-            analyzerMode: "static",
-            reportFilename: "./report/treemap.html",
-            openAnalyzer: true,
-            logLevel: "error",
-            defaultSizes: "gzip"
+            use: "yaml-loader",
+            test: /\.yaml$/,
+            include: path.resolve("data")
           }
-        ]);
-
-        config.loader("yaml-loader", {
-          test: /\.yaml$/,
-          include: path.resolve("data"),
-          loader: "yaml"
-        });
+        ]
       }
-      break;
+    });
   }
-
-  return config;
 };
 
-exports.modifyBabelrc = ({ babelrc }) => {
-  return {
-    ...babelrc,
-    plugins: babelrc.plugins.concat([
-      [
-        "styled-jsx/babel",
-        {
-          plugins: [
-            "styled-jsx-plugin-postcss",
-            [
-              "styled-jsx-plugin-stylelint",
-              {
-                stylelint: {
-                  rules: {
-                    "block-no-empty": true,
-                    "color-no-invalid-hex": true,
-                    "unit-no-unknown": true,
-                    "property-no-unknown": true,
-                    "declaration-block-no-shorthand-property-overrides": true,
-                    "selector-pseudo-element-no-unknown": true,
-                    "selector-type-no-unknown": true,
-                    "media-feature-name-no-unknown": true,
-                    "no-empty-source": true,
-                    "no-extra-semicolons": true,
-                    "function-url-no-scheme-relative": true,
-                    "declaration-no-important": true,
-                    "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }],
-                    "shorthand-property-no-redundant-values": true,
-                    "no-duplicate-selectors": null,
-                    "declaration-block-no-duplicate-properties": null,
-                    "no-descending-specificity": null
-                  }
-                }
+exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }, { style }) => {
+  setBabelPlugin({ name: "babel-plugin-syntax-dynamic-import" });
+  setBabelPlugin({ name: "babel-plugin-dynamic-import-webpack" });
+  setBabelPlugin({
+    name: `babel-plugin-import`,
+    options: {
+      libraryName: "antd",
+      style: style === true ? style : "css"
+    }
+  });
+  setBabelPlugin({
+    name: `styled-jsx/babel`,
+    options: {
+      plugins: [
+        "styled-jsx-plugin-postcss",
+        [
+          "styled-jsx-plugin-stylelint",
+          {
+            stylelint: {
+              rules: {
+                "block-no-empty": true,
+                "color-no-invalid-hex": true,
+                "unit-no-unknown": true,
+                "property-no-unknown": true,
+                "declaration-block-no-shorthand-property-overrides": true,
+                "selector-pseudo-element-no-unknown": true,
+                "selector-type-no-unknown": true,
+                "media-feature-name-no-unknown": true,
+                "no-empty-source": true,
+                "no-extra-semicolons": true,
+                "function-url-no-scheme-relative": true,
+                "declaration-no-important": true,
+                "selector-pseudo-class-no-unknown": [true, { ignorePseudoClasses: ["global"] }],
+                "shorthand-property-no-redundant-values": true,
+                "no-duplicate-selectors": null,
+                "declaration-block-no-duplicate-properties": null,
+                "no-descending-specificity": null
               }
-            ]
-          ]
-        }
-      ],
-      [
-        "import",
-        {
-          libraryName: "antd",
-          style: "css"
-        }
-      ],
-      `syntax-dynamic-import`,
-      `dynamic-import-webpack`
-    ])
-  };
+            }
+          }
+        ]
+      ]
+    }
+  });
 };
