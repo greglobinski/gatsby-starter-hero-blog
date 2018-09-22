@@ -3,7 +3,7 @@ const config = require("./content/meta/config");
 const transformer = require("./src/utils/algolia");
 
 const query = `{
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts|pages/[0-9]+.*--/"}}) {
+  allMarkdownRemark( filter: { fields: { slug: { ne: null } } }) {
     edges {
       node {
         objectID: fileAbsolutePath
@@ -224,7 +224,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { id: { regex: "//posts//" } }
+                  filter: { fields: { slug: { ne: null } } }
                 ) {
                   edges {
                     node {

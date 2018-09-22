@@ -10,12 +10,25 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` });
+    const fileNode = getNode(node.parent);
+    const filePath = createFilePath({ node, getNode });
+    const source = fileNode.sourceInstanceName;
     const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
     const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
     createNodeField({
       node,
       name: `slug`,
       value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+    });
+    createNodeField({
+      node,
+      name: `source`,
+      value: source
+    });
+    createNodeField({
+      node,
+      name: `filePath`,
+      value: filePath
     });
     createNodeField({
       node,
@@ -37,7 +50,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMarkdownRemark(
-              filter: { id: { regex: "//posts|pages//" } }
+              filter: { fields: { slug: { ne: null } } }
               sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
