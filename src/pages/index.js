@@ -72,7 +72,7 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 //eslint-disable-next-line no-undef
-export const guery = graphql`
+export const query = graphql`
   query IndexQuery {
     posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }

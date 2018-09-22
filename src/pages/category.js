@@ -83,7 +83,7 @@ CategoryPage.propTypes = {
 export default CategoryPage;
 
 //eslint-disable-next-line no-undef
-export const guery = graphql`
+export const query = graphql`
   query PostsQuery {
     posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
