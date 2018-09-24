@@ -9,31 +9,28 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    const slug = createFilePath({ node, getNode });
     const fileNode = getNode(node.parent);
-    const filePath = createFilePath({ node, getNode });
     const source = fileNode.sourceInstanceName;
     const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
     const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+
+    if (source !== "parts") {
+      createNodeField({
+        node,
+        name: `slug`,
+        value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+      });
+    }
     createNodeField({
       node,
-      name: `slug`,
-      value: `${separtorIndex ? "/" : ""}${slug.substring(shortSlugStart)}`
+      name: `prefix`,
+      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
     });
     createNodeField({
       node,
       name: `source`,
       value: source
-    });
-    createNodeField({
-      node,
-      name: `filePath`,
-      value: filePath
-    });
-    createNodeField({
-      node,
-      name: `prefix`,
-      value: separtorIndex ? slug.substring(1, separtorIndex) : ""
     });
   }
 };
@@ -60,6 +57,7 @@ exports.createPages = ({ graphql, actions }) => {
                   fields {
                     slug
                     prefix
+                    source
                   }
                   frontmatter {
                     title
@@ -105,7 +103,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         // Create posts
-        const posts = items.filter(item => /posts/.test(item.node.id));
+        const posts = items.filter(item => item.node.fields.source === "posts");
         posts.forEach(({ node }, index) => {
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
@@ -117,13 +115,14 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               slug,
               prev,
-              next
+              next,
+              source
             }
           });
         });
 
         // and pages.
-        const pages = items.filter(item => /pages/.test(item.node.id));
+        const pages = items.filter(item => item.node.fields.source === "pages");
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
 
@@ -131,7 +130,8 @@ exports.createPages = ({ graphql, actions }) => {
             path: slug,
             component: pageTemplate,
             context: {
-              slug
+              slug,
+              source
             }
           });
         });
