@@ -158,7 +158,7 @@ export default Layout;
 export const postQuery = graphql`
   query LayoutQuery {
     pages: allMarkdownRemark(
-      filter: { id: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
+      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
       sort: { fields: [fields___prefix], order: ASC }
     ) {
       edges {
@@ -174,7 +174,7 @@ export const postQuery = graphql`
         }
       }
     }
-    footnote: markdownRemark(id: { regex: "/footnote/" }) {
+    footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
       id
       html
     }

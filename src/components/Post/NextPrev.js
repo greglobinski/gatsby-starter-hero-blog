@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 
-import FaArrowRight from "react-icons/lib/fa/arrow-right";
-import FaArrowLeft from "react-icons/lib/fa/arrow-left";
+import { FaArrowRight } from "react-icons/fa/";
+import { FaArrowLeft } from "react-icons/fa/";
 
 const NextPrev = props => {
   const {

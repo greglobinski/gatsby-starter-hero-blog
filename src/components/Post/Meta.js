@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Link from "gatsby-link";
+import { Link } from "gatsby";
 
-import FaCalendar from "react-icons/lib/fa/calendar";
-import FaUser from "react-icons/lib/fa/user";
-import FaTag from "react-icons/lib/fa/tag";
+import { FaCalendar } from "react-icons/fa/";
+import { FaUser } from "react-icons/fa/";
+import { FaTag } from "react-icons/fa/";
 
 const Meta = props => {
   const { prefix, author: authorName, category, theme } = props;

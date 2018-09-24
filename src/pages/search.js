@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-
+import { graphql } from "gatsby";
 require("core-js/fn/array/find");
 
 import Article from "../components/Article";
