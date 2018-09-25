@@ -1,9 +1,9 @@
-const flush = require("styled-jsx/server");
+// const flush = require("styled-jsx/server");
 
-exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
-  if (process.env.NODE_ENV === `production`) {
-    const css = flush();
+// exports.onRenderBody = ({ setHeadComponents }, pluginOptions) => {
+//   if (process.env.NODE_ENV === `production`) {
+//     const css = flush();
 
-    setHeadComponents([css]);
-  }
-};
+//     setHeadComponents([css]);
+//   }
+// };

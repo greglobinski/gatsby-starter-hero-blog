@@ -108,6 +108,7 @@ exports.createPages = ({ graphql, actions }) => {
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
+          const source = node.fields.source;
 
           createPage({
             path: slug,
@@ -125,6 +126,7 @@ exports.createPages = ({ graphql, actions }) => {
         const pages = items.filter(item => item.node.fields.source === "pages");
         pages.forEach(({ node }) => {
           const slug = node.fields.slug;
+          const source = node.fields.source;
 
           createPage({
             path: slug,
@@ -140,6 +142,7 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
+/*
 exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
   if (options.disable) return;
   if (stage === "develop" || (options.production && stage === "build-javascript")) {
@@ -213,3 +216,5 @@ exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }, { style }) => {
     }
   });
 };
+
+*/
