@@ -71,7 +71,7 @@ const Contact = props => {
                       whitespace: true
                     }
                   ]
-                })(<Input name="name"/>)}
+                })(<Input name="name" />)}
               </FormItem>
               <FormItem label="E-mail">
                 {getFieldDecorator("email", {
@@ -83,7 +83,7 @@ const Contact = props => {
                       type: "email"
                     }
                   ]
-                })(<Input name="email"/>)}
+                })(<Input name="email" />)}
               </FormItem>
               <FormItem label="Message">
                 {getFieldDecorator("message", {
