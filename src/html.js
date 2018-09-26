@@ -1,30 +1,13 @@
-/* eslint  react/prop-types: 0 */
-import React from "react";
+import React from "react"
 import PropTypes from "prop-types"
-
-let stylesStr;
-if (process.env.NODE_ENV === `production`) {
-  try {
-    stylesStr = require(`!raw-loader!../public/styles.css`);
-  } catch (e) {
-    console.log(e);
-  }
-}
 
 export default class HTML extends React.Component {
   render() {
-    let css;
-    if (process.env.NODE_ENV === `production`) {
-      css = <style id="gatsby-inlined-css" dangerouslySetInnerHTML={{ __html: stylesStr }} />;
-    }
     return (
       <html {...this.props.htmlAttributes}>
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          {this.props.headComponents}
-          {css}
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="apple-mobile-web-app-status-bar-style" content="#D0E0D8" />
           <meta name="apple-mobile-web-app-title" content="Lazywill" />
@@ -40,17 +23,25 @@ export default class HTML extends React.Component {
           <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="96x96" href="/icons/favicon-96x96.png" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          {this.props.headComponents}
         </head>
         <body {...this.props.bodyAttributes}>
-          <noscript>You need to enable JavaScript to run this app!</noscript>
           {this.props.preBodyComponents}
-          <div key={`body`} id="___gatsby" dangerouslySetInnerHTML={{ __html: this.props.body }} />
+          <div
+            key={`body`}
+            id="___gatsby"
+            dangerouslySetInnerHTML={{ __html: this.props.body }}
+          />
           {this.props.postBodyComponents}
         </body>
       </html>
-    );
+    )
   }
-};
+}
 
 HTML.propTypes = {
   htmlAttributes: PropTypes.object,
