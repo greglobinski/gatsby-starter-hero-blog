@@ -1,4 +1,4 @@
-import FaAngleDown from "react-icons/lib/fa/angle-down";
+import { FaAngleDown } from "react-icons/fa/";
 import PropTypes from "prop-types";
 import React from "react";
 
