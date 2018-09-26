@@ -1,5 +1,6 @@
 /* eslint  react/prop-types: 0 */
 import React from "react";
+import PropTypes from "prop-types"
 
 let stylesStr;
 if (process.env.NODE_ENV === `production`) {
@@ -50,3 +51,12 @@ export default class HTML extends React.Component {
     );
   }
 };
+
+HTML.propTypes = {
+  htmlAttributes: PropTypes.object,
+  headComponents: PropTypes.array,
+  bodyAttributes: PropTypes.object,
+  preBodyComponents: PropTypes.array,
+  body: PropTypes.string,
+  postBodyComponents: PropTypes.array,
+}
