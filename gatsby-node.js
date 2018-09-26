@@ -142,46 +142,25 @@ exports.createPages = ({ graphql, actions }) => {
   });
 };
 
-/*
 exports.onCreateWebpackConfig = ({ stage, actions }, options) => {
-  if (options.disable) return;
-  if (stage === "develop" || (options.production && stage === "build-javascript")) {
-    actions.setWebpackConfig({
-      plugins: [
-        new BundleAnalyzerPlugin({
-          analyzerMode: "static",
-          reportFilename: "./report/treemap.html",
-          openAnalyzer: true,
-          logLevel: "error",
-          defaultSizes: "gzip"
-        })
-      ]
-    });
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            use: "yaml-loader",
-            test: /\.yaml$/,
-            include: path.resolve("data")
-          }
+  switch (stage) {
+    case `build-javascript`:
+      actions.setWebpackConfig({
+        plugins: [
+          new BundleAnalyzerPlugin({
+            analyzerMode: "static",
+            reportFilename: "./report/treemap.html",
+            openAnalyzer: true,
+            logLevel: "error",
+            defaultSizes: "gzip"
+          })
         ]
-      }
-    });
+      });
   }
 };
 
-exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }, { style }) => {
-  setBabelPlugin({ name: "babel-plugin-syntax-dynamic-import" });
-  setBabelPlugin({ name: "babel-plugin-dynamic-import-webpack" });
-  setBabelPlugin({
-    name: `babel-plugin-import`,
-    options: {
-      libraryName: "antd",
-      style: style === true ? style : "css"
-    }
-  });
-  setBabelPlugin({
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
     name: `styled-jsx/babel`,
     options: {
       plugins: [
@@ -216,5 +195,3 @@ exports.onCreateBabelConfig = ({ actions: { setBabelPlugin } }, { style }) => {
     }
   });
 };
-
-*/
