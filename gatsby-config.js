@@ -48,9 +48,14 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-react-next`,
-    // `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
-    // 'gatsby-plugin-styled-jsx-postcss', // as above
+    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
+    "gatsby-plugin-styled-jsx-postcss", // as above
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layouts/`)
+      }
+    },
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
