@@ -28,8 +28,8 @@ const Item = props => {
     <React.Fragment>
       <li>
         <Link to={slug} key={slug} className="link">
-         <div className="gatsby-image-outer-wrapper">
-          <Img fluid={fluid} />
+          <div className="gatsby-image-outer-wrapper">
+            <Img fluid={fluid} />
           </div>
           <h1>
             {title} <FaArrowRight className="arrow" />
@@ -216,8 +216,6 @@ const Item = props => {
               :global(.arrow) {
                 opacity: 1;
                 stroke: ${theme.color.special.attention};
-                stroke-width:50;
-                stroke-linecap:"round";
                 transform: translateX(0);
               }
             }
@@ -228,8 +226,8 @@ const Item = props => {
               display: inline-block;
               fill: ${theme.color.special.attention};
               stroke: ${theme.color.special.attention};
-              stroke-width:30;
-              stroke-linecap:"round";
+              stroke-width: 40;
+              stroke-linecap: round;
               opacity: 0;
               transition: all 0.5s;
               transform: translateX(-50%);
