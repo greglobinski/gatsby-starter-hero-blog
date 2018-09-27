@@ -3,7 +3,7 @@ const config = require("./content/meta/config");
 const transformer = require("./src/utils/algolia");
 
 const query = `{
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts|pages/[0-9]+.*--/"}}) {
+  allMarkdownRemark( filter: { fields: { slug: { ne: null } } }) {
     edges {
       node {
         objectID: fileAbsolutePath
@@ -48,9 +48,14 @@ module.exports = {
     }
   },
   plugins: [
-    `gatsby-plugin-react-next`,
-    // `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
-    // 'gatsby-plugin-styled-jsx-postcss', // as above
+    `gatsby-plugin-styled-jsx`, // the plugin's code is inserted directly to gatsby-node.js and gatsby-ssr.js files
+    `gatsby-plugin-styled-jsx-postcss`, // as above
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layouts/`)
+      }
+    },
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
@@ -224,7 +229,7 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { id: { regex: "//posts//" } }
+                  filter: { fields: { slug: { ne: null } } }
                 ) {
                   edges {
                     node {

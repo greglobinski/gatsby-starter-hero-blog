@@ -2,6 +2,7 @@ import "typeface-open-sans";
 import FontFaceObserver from "fontfaceobserver";
 import PropTypes from "prop-types";
 import React from "react";
+import { graphql, StaticQuery } from "gatsby";
 
 import { getScreenWidth, timeoutThrottlerHandler } from "../utils/helpers";
 import Footer from "../components/Footer/";
@@ -75,79 +76,114 @@ class Layout extends React.Component {
   };
 
   render() {
-    const { children, data } = this.props;
-    const {
-      footnote: { html: footnoteHTML },
-      pages: { edges: pages }
-    } = data;
-
     return (
-      <ThemeContext.Provider value={this.state.theme}>
-        <FontLoadedContext.Provider value={this.state.font400loaded}>
-          <ScreenWidthContext.Provider value={this.state.screenWidth}>
-            <React.Fragment>
-              <Header path={this.props.location.pathname} pages={pages} theme={this.state.theme} />
-              <main>{children()}</main>
-              <Footer html={footnoteHTML} theme={this.state.theme} />
+      <StaticQuery
+        query={graphql`
+          query LayoutgQuery {
+            pages: allMarkdownRemark(
+              filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
+              sort: { fields: [fields___prefix], order: ASC }
+            ) {
+              edges {
+                node {
+                  fields {
+                    slug
+                    prefix
+                  }
+                  frontmatter {
+                    title
+                    menuTitle
+                  }
+                }
+              }
+            }
+            footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
+              id
+              html
+            }
+          }
+        `}
+        render={data => {
+          const { children } = this.props;
+          const {
+            footnote: { html: footnoteHTML },
+            pages: { edges: pages }
+          } = data;
 
-              {/* --- STYLES --- */}
-              <style jsx>{`
-                main {
-                  min-height: 80vh;
-                }
-              `}</style>
-              <style jsx global>{`
-                html {
-                  box-sizing: border-box;
-                }
-                *,
-                *:after,
-                *:before {
-                  box-sizing: inherit;
-                  margin: 0;
-                  padding: 0;
-                }
-                body {
-                  font-family: ${this.state.font400loaded
-                    ? "'Open Sans', sans-serif;"
-                    : "Arial, sans-serif;"};
-                }
-                h1,
-                h2,
-                h3 {
-                  font-weight: ${this.state.font600loaded ? 600 : 400};
-                  line-height: 1.1;
-                  letter-spacing: -0.03em;
-                  margin: 0;
-                }
-                h1 {
-                  letter-spacing: -0.04em;
-                }
-                p {
-                  margin: 0;
-                }
-                strong {
-                  font-weight: ${this.state.font600loaded ? 600 : 400};
-                }
-                a {
-                  text-decoration: none;
-                  color: #666;
-                }
-                main {
-                  width: auto;
-                  display: block;
-                }
-              `}</style>
-            </React.Fragment>
-          </ScreenWidthContext.Provider>
-        </FontLoadedContext.Provider>
-      </ThemeContext.Provider>
+          return (
+            <ThemeContext.Provider value={this.state.theme}>
+              <FontLoadedContext.Provider value={this.state.font400loaded}>
+                <ScreenWidthContext.Provider value={this.state.screenWidth}>
+                  <React.Fragment>
+                    <Header
+                      path={this.props.location.pathname}
+                      pages={pages}
+                      theme={this.state.theme}
+                    />
+                    <main>{children}</main>
+                    <Footer html={footnoteHTML} theme={this.state.theme} />
+
+                    {/* --- STYLES --- */}
+                    <style jsx>{`
+                      main {
+                        min-height: 80vh;
+                      }
+                    `}</style>
+                    <style jsx global>{`
+                      html {
+                        box-sizing: border-box;
+                      }
+                      *,
+                      *:after,
+                      *:before {
+                        box-sizing: inherit;
+                        margin: 0;
+                        padding: 0;
+                      }
+                      body {
+                        font-family: ${this.state.font400loaded
+                          ? "'Open Sans', sans-serif;"
+                          : "Arial, sans-serif;"};
+                      }
+                      h1,
+                      h2,
+                      h3 {
+                        font-weight: ${this.state.font600loaded ? 600 : 400};
+                        line-height: 1.1;
+                        letter-spacing: -0.03em;
+                        margin: 0;
+                      }
+                      h1 {
+                        letter-spacing: -0.04em;
+                      }
+                      p {
+                        margin: 0;
+                      }
+                      strong {
+                        font-weight: ${this.state.font600loaded ? 600 : 400};
+                      }
+                      a {
+                        text-decoration: none;
+                        color: #666;
+                      }
+                      main {
+                        width: auto;
+                        display: block;
+                      }
+                    `}</style>
+                  </React.Fragment>
+                </ScreenWidthContext.Provider>
+              </FontLoadedContext.Provider>
+            </ThemeContext.Provider>
+          );
+        }}
+      />
     );
   }
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
+  children: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired
 };
@@ -155,10 +191,11 @@ Layout.propTypes = {
 export default Layout;
 
 //eslint-disable-next-line no-undef
+/*
 export const postQuery = graphql`
   query LayoutQuery {
     pages: allMarkdownRemark(
-      filter: { id: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
+      filter: { fileAbsolutePath: { regex: "//pages//" }, fields: { prefix: { regex: "/^\\d+$/" } } }
       sort: { fields: [fields___prefix], order: ASC }
     ) {
       edges {
@@ -174,9 +211,11 @@ export const postQuery = graphql`
         }
       }
     }
-    footnote: markdownRemark(id: { regex: "/footnote/" }) {
+    footnote: markdownRemark(fileAbsolutePath: { regex: "/footnote/" }) {
       id
       html
     }
   }
 `;
+
+*/
