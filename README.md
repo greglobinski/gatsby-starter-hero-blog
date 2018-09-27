@@ -22,28 +22,32 @@ See the starter in action » [demo website](https://gatsby-starter-hero-blog.gre
 
 A ready to use, easy to customize 'like theme' starter with a 'Hero' section on the home page.
 
+The starter was initialy built for Gatsby v1. Now, thanks to [@mohsenkhanpour](https://github.com/mohsenkhanpour) it's [upgraded](https://github.com/greglobinski/gatsby-starter-hero-blog/issues/32) to Gatsby v2. Thank you Mohsen :)
+
+The original version of the starter is preserved as the branch `gatsby-v1`.
+
 ## Features:
 
-* Easy editable content in **Markdown** files (posts, pages and parts)
-* **CSS** with `styled-jsx` and `PostCSS`
-* **SEO** (sitemap generation, robot.txt, meta and OpenGraph Tags)
-* **Social** sharing (Twitter, Facebook, Google, LinkedIn)
-* **Comments** (Facebook)
-* **Images** lazy loading and `webp` support (gatsby-image)
-* Post **categories** (category based post list)
-* Full text **searching** (Algolia)
-* **Contact** form (Netlify form handling)
-* Form elements and validation with `ant-design`
-* **RSS** feed
-* 100% **PWA** (manifest.webmanifest, offline support, favicons)
-* Google **Analytics**
-* App **favicons** generator (node script)
-* Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
-* React **v.16.3** (gatsby-plugin-react-next)
-* **Components** lazy loading (social sharing)
-* **ESLint** (google config)
-* **Prettier** code styling
-* Webpack `BundleAnalyzerPlugin`
+- Easy editable content in **Markdown** files (posts, pages and parts)
+- **CSS** with `styled-jsx` and `PostCSS`
+- **SEO** (sitemap generation, robot.txt, meta and OpenGraph Tags)
+- **Social** sharing (Twitter, Facebook, Google, LinkedIn)
+- **Comments** (Facebook)
+- **Images** lazy loading and `webp` support (gatsby-image)
+- Post **categories** (category based post list)
+- Full text **searching** (Algolia)
+- **Contact** form (Netlify form handling)
+- Form elements and validation with `ant-design`
+- **RSS** feed
+- 100% **PWA** (manifest.webmanifest, offline support, favicons)
+- Google **Analytics**
+- App **favicons** generator (node script)
+- Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
+- React **v.16.3** (gatsby-plugin-react-next)
+- **Components** lazy loading (social sharing)
+- **ESLint** (google config)
+- **Prettier** code styling
+- Webpack `BundleAnalyzerPlugin`
 
 ## Prerequisites
 
@@ -95,9 +99,9 @@ FB_APP_ID=...
 
 ### Instructions & tutorials
 
-* [How to install, setup and add new content to a Blog starter](https://dev.greglobinski.com/install-blog-starter/)
-* [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
-* More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
+- [How to install, setup and add new content to a Blog starter](https://dev.greglobinski.com/install-blog-starter/)
+- [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
+- More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
 
 ## Windows users
 
@@ -105,17 +109,17 @@ You should take a look at this: [Gatsby on Windows](https://www.gatsbyjs.org/doc
 
 ## Authors
 
-* Greg Lobinski [@greglobinski](https://github.com/greglobinski)
+- Greg Lobinski [@greglobinski](https://github.com/greglobinski)
 
 See also the list of [contributors](https://github.com/greglobinski/gatsby-starter-personal-blog/graphs/contributors) who participated in this project.
 
 ## Contributing
 
-* Fork the repo
-* Create your feature branch (git checkout -b feature/fooBar)
-* Commit your changes (git commit -am 'Add some fooBar')
-* Push to the branch (git push origin feature/fooBar)
-* Create a new Pull Request
+- Fork the repo
+- Create your feature branch (git checkout -b feature/fooBar)
+- Commit your changes (git commit -am 'Add some fooBar')
+- Push to the branch (git push origin feature/fooBar)
+- Create a new Pull Request
 
 ## Licence
 
