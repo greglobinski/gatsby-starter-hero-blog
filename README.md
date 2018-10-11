@@ -48,6 +48,7 @@ The original version of the starter is preserved as the branch `gatsby-v1`.
 - **ESLint** (google config)
 - **Prettier** code styling
 - Webpack `BundleAnalyzerPlugin`
+- **Gravatar** image (optional) instead local Avatar/Logo image
 
 ## Prerequisites
 
