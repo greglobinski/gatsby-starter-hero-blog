@@ -38,7 +38,7 @@ class Header extends React.Component {
         <header className={`header ${this.getHeaderSize()}`}>
           <Link to="/" className="logoType">
             <div className="logo">
-              <img src={avatar} alt={config.siteTitle} />
+              <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
             </div>
             <div className="type">
               <h1>{config.headerTitle}</h1>
