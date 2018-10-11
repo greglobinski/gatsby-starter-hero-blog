@@ -6,7 +6,7 @@
   "dependencies": {
     "antd": "^3.7.0",
     "fontfaceobserver": "^2.0.13",
-    "gatsby": "^2.0.4",
+    "gatsby": "^2.0.21",
     "gatsby-image": "^2.0.5",
     "gatsby-plugin-algolia": "^0.1.0",
     "gatsby-plugin-catch-links": "^2.0.2",
