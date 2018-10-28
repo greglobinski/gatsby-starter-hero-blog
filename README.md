@@ -22,7 +22,7 @@ See the starter in action » [demo website](https://gatsby-starter-hero-blog.gre
 
 A ready to use, easy to customize 'like theme' starter with a 'Hero' section on the home page.
 
-The starter was initialy built for Gatsby v1. Now, thanks to [@mohsenkhanpour](https://github.com/mohsenkhanpour) it's [upgraded](https://github.com/greglobinski/gatsby-starter-hero-blog/issues/32) to Gatsby v2. Thank you Mohsen :)
+The starter was initially built for Gatsby v1. Now, thanks to [@mohsenkhanpour](https://github.com/mohsenkhanpour) it's [upgraded](https://github.com/greglobinski/gatsby-starter-hero-blog/issues/32) to Gatsby v2. Thank you Mohsen :)
 
 The original version of the starter is preserved as the branch `gatsby-v1`.
 
