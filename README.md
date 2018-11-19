@@ -60,6 +60,8 @@ npm install --global gatsby-cli
 
 More information on [GatsbyJS.org](https://www.gatsbyjs.org/tutorial/part-one)
 
+Heads up, this theme uses the plugin `gatsby-sharp` which has pre-compiled binaries available only for Node versions 6, 8 and 10 on 64-bit Windows, OS X, and Linux platforms. Because of this, we recommend using Node 10 or below.
+
 ## Getting started
 
 Install the starter using Gatsby Cli `gatsby new` command.
