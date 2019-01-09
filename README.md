@@ -104,6 +104,10 @@ FB_APP_ID=...
 - [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
 - More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
 
+- Choosing comment system
+  * if you use the default commenting system (facebook comment), just comment disqusShortName in (content/meta/config.js)
+  * if you use disqus, change `...` placeholders on disquesShortName with yours disqus short name.
+
 ## Windows users
 
 You should take a look at this: [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
