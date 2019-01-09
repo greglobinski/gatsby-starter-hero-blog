@@ -8,8 +8,8 @@ module.exports = {
   siteLanguage: "en",
 
   /* disqus comment system */
-  // if you use facebook comment, just remove disqus disquesShortname
-  disqusShortname: "",
+  // if you use facebook comment, leave it disquesShortName like this
+  //disqusShortname: "",
 
   /* author */
   authorName: "greg lobinski",
