@@ -7,6 +7,10 @@ module.exports = {
   siteImage: "preview.jpg",
   siteLanguage: "en",
 
+  /* disqus comment system */
+  // if you use facebook comment, just remove disqus disquesShortname
+  disqusShortname: "",
+
   /* author */
   authorName: "greg lobinski",
   authorTwitterAccount: "greglobinski",
