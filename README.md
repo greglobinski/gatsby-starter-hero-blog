@@ -105,7 +105,7 @@ FB_APP_ID=...
 - More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
 
 - Choosing comment system
-  * if you use disqus, change `...` placeholders on disqusShortName with yours disqus short name.
+  * if you use disqus, uncomment disqusShortname in [config.js](content/meta/config.js) and change `...` placeholders on disqusShortName with yours disqus short name.
   * if you use facebook comment, just follow external service instructions.
 
 ## Windows users
