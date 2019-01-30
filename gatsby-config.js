@@ -230,7 +230,12 @@ module.exports = {
                 allMarkdownRemark(
                   limit: 1000,
                   sort: { order: DESC, fields: [fields___prefix] },
-                  filter: { fields: { slug: { ne: null } } }
+                  filter: {
+                    fields: {
+                      prefix: { ne: null },
+                      slug: { ne: null }
+                    }
+                  }
                 ) {
                   edges {
                     node {
