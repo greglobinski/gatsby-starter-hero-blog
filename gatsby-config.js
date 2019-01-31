@@ -234,6 +234,9 @@ module.exports = {
                     fields: {
                       prefix: { ne: null },
                       slug: { ne: null }
+                    },
+                    frontmatter: {
+                      author: { ne: null }
                     }
                   }
                 ) {
