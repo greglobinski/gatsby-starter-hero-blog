@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "antd": "^3.7.0",
+    "disqus-react": "^1.0.5",
     "fontfaceobserver": "^2.0.13",
     "gatsby": "^2.0.21",
     "gatsby-image": "^2.0.5",
