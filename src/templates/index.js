@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { ThemeContext } from "../layouts";
 import Blog from "../components/Blog";
 import Hero from "../components/Hero";
@@ -14,6 +14,12 @@ class IndexPage extends React.Component {
   };
 
   render() {
+    const { currentPage, numPages } = this.props.pageContext;
+    const isFirst = currentPage === 1 || !currentPage;
+    const isLast = currentPage === numPages;
+    const prevPage = currentPage - 1 === 1 ? "/" : (currentPage - 1).toString();
+    const nextPage = (currentPage + 1).toString();
+
     const {
       data: {
         posts: { edges: posts = [] },
@@ -25,9 +31,6 @@ class IndexPage extends React.Component {
         },
         bgMobile: {
           resize: { src: mobile }
-        },
-        site: {
-          siteMetadata: { facebook }
         }
       }
     } = this.props;
@@ -40,19 +43,82 @@ class IndexPage extends React.Component {
 
     return (
       <React.Fragment>
-        <ThemeContext.Consumer>
-          {theme => (
-            <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
-          )}
-        </ThemeContext.Consumer>
+        {isFirst ? (
+          <React.Fragment>
+            <ThemeContext.Consumer>
+              {theme => (
+                <Hero
+                  scrollToContent={this.scrollToContent}
+                  backgrounds={backgrounds}
+                  theme={theme}
+                />
+              )}
+            </ThemeContext.Consumer>
 
-        <hr ref={this.separator} />
+            <hr ref={this.separator} />
+          </React.Fragment>
+        ) : null}
 
         <ThemeContext.Consumer>
           {theme => <Blog posts={posts} theme={theme} />}
         </ThemeContext.Consumer>
 
-        <Seo facebook={facebook} />
+        <div
+          style={{
+            maxWidth: "700px",
+            margin: "0 auto 20px auto",
+            textAlign: "center"
+          }}
+        >
+          {!isFirst && (
+            <Link to={prevPage} rel="prev">
+              ← Previous Page&nbsp;
+            </Link>
+          )}
+
+          {!isLast && (
+            <Link to={nextPage} rel="next">
+              &nbsp;Next Page →
+            </Link>
+          )}
+        </div>
+
+        <ul
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            maxWidth: "700px",
+            margin: "0 auto 60px auto",
+            alignItems: "center",
+            listStyle: "none",
+            padding: 0,
+            lineHeight: "30px"
+          }}
+        >
+          {Array.from({ length: numPages }, (_, i) => (
+            <li
+              key={`pagination-number${i + 1}`}
+              style={{
+                margin: 0
+              }}
+            >
+              <Link
+                to={`/${i === 0 ? "" : i + 1}`}
+                style={{
+                  padding: "3px 8px",
+                  borderRadius: "5px",
+                  textDecoration: "none",
+                  color: i + 1 === currentPage ? "#ffffff" : "",
+                  background: i + 1 === currentPage ? "#007acc" : ""
+                }}
+              >
+                {i + 1}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <Seo />
 
         <style jsx>{`
           hr {
@@ -66,17 +132,20 @@ class IndexPage extends React.Component {
 }
 
 IndexPage.propTypes = {
-  data: PropTypes.object.isRequired
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 };
 
 export default IndexPage;
 
 //eslint-disable-next-line no-undef
 export const query = graphql`
-  query IndexQuery {
+  query IndexQuery($skip: Int!, $limit: Int!) {
     posts: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "//posts/[0-9]+.*--/" } }
       sort: { fields: [fields___prefix], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {
@@ -88,7 +157,6 @@ export const query = graphql`
           frontmatter {
             title
             category
-            author
             cover {
               children {
                 ... on ImageSharp {
@@ -99,13 +167,6 @@ export const query = graphql`
               }
             }
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
         }
       }
     }
