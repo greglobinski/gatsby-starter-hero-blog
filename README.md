@@ -49,6 +49,7 @@ The original version of the starter is preserved as the branch `gatsby-v1`.
 - **Prettier** code styling
 - Webpack `BundleAnalyzerPlugin`
 - **Gravatar** image (optional) instead local Avatar/Logo image
+- **Create Post** `npm run create-post` for auto generate content posts folder
 
 ## Prerequisites
 
@@ -104,6 +105,19 @@ FB_APP_ID=...
 - [Setup Algolia account for your GatsbyJS blog](https://dev.greglobinski.com/setup-algolia-account/)
 - More articles at [Front-end web development with Greg](https://dev.greglobinski.com/)
 
+- **Choosing comment system**
+  * if you use disqus, uncomment disqusShortname in [config.js](content/meta/config.js) and change `...` placeholders on disqusShortName with yours disqus short name.
+  * if you use facebook comment, just follow external service instructions.
+- **Create Post** {**_Only tested on Unix-like, Linux, MacOs_**}
+  for auto create new article, just type.
+  ```bash
+  npm run create-post ["Title"] ["Category"] ["Author"] "Path\to\image"
+  ```
+  on example,
+  ```bash
+   npm run create-post "Generate Post using script" "Test Script" "Yunindyo Prabowo" ~/ava.jpg
+   ```
+   
 ## Windows users
 
 You should take a look at this: [Gatsby on Windows](https://www.gatsbyjs.org/docs/gatsby-on-windows/)
