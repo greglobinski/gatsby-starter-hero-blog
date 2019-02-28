@@ -1,6 +1,6 @@
 ---
 title: I may not have gone where I intended to go
-category: "testimonies"
+category: ["testimonies","general"]
 cover: photo-1507915600431-5292809c5ab7.jpg
 author: greg lobinski
 ---
