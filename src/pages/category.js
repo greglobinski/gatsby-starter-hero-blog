@@ -28,10 +28,12 @@ const CategoryPage = props => {
     } = edge;
 
     if (category && category != null) {
-      if (!categories[category]) {
-        categories[category] = [];
-      }
-      categories[category].push(edge);
+      category.forEach(element =>{
+        if (!categories[element]) {
+          categories[element] = [];
+        }
+        categories[element].push(edge);
+      });
     }
   });
 

@@ -17,12 +17,14 @@ const Meta = props => {
       <span>
         <FaUser size={18} /> {authorName}
       </span>
-      {category && (
-        <span>
-          <FaTag size={18} />
-          <Link to={`/category/${category.split(" ").join("-")}`}>{category}</Link>
-        </span>
-      )}
+      { category && category.map(element => {
+        return (   
+           <span>
+              <FaTag size={18} />
+              <Link to={`/category/${element}`}>{element}</Link>
+            </span>
+          )
+            })}
 
       {/* --- STYLES --- */}
       <style jsx>{`

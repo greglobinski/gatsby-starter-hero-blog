@@ -1,6 +1,6 @@
 ---
 title: You only live once
-category: "sayings"
+category: ["sayings"]
 cover: photo-1456518563096-0ff5ee08204e.jpg
 author: greg lobinski
 ---
