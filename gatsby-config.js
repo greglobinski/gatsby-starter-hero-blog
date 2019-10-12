@@ -57,6 +57,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-algolia`,
       options: {
         appId: process.env.ALGOLIA_APP_ID ? process.env.ALGOLIA_APP_ID : "",

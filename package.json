@@ -22,6 +22,7 @@
     "gatsby-plugin-sitemap": "^2.0.1",
     "gatsby-plugin-styled-jsx": "^3.0.1",
     "gatsby-plugin-styled-jsx-postcss": "^2.0.2",
+    "gatsby-plugin-typography": "^2.3.10",
     "gatsby-remark-copy-linked-files": "^2.0.5",
     "gatsby-remark-emojis": "^0.2.3",
     "gatsby-remark-external-links": "^0.0.4",
@@ -45,12 +46,15 @@
     "react-md-spinner": "^0.3.0",
     "react-obfuscate": "^2.1.4",
     "react-share": "^2.2.0",
+    "react-typography": "^0.16.19",
     "react-visibility-sensor": "^4.1.0",
     "styled-jsx": "^2.2.7",
     "styled-jsx-plugin-postcss": "^0.1.3",
     "styled-jsx-plugin-stylelint": "^0.1.0",
     "tinycolor2": "^1.4.1",
     "typeface-open-sans": "^0.0.54",
+    "typography": "^0.16.19",
+    "typography-theme-funston": "^0.16.19",
     "yaml-loader": "^0.5.0"
   },
   "keywords": [
