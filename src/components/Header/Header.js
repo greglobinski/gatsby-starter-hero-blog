@@ -7,7 +7,7 @@ import { ScreenWidthContext, FontLoadedContext } from "../../layouts";
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
-import avatar from "../../images/jpg/avatar.jpg";
+import avatar from "../../images/jpg/dmc.jpg";
 
 class Header extends React.Component {
   state = {
@@ -38,7 +38,7 @@ class Header extends React.Component {
         <header className={`header ${this.getHeaderSize()}`}>
           <Link to="/" className="logoType">
             <div className="logo">
-              <img src={config.gravatarImgMd5=="" ? avatar : config.gravatarImgMd5 } alt={config.siteTitle} />
+            <img src={avatar} alt={config.siteTitle} />
             </div>
             <div className="type">
               <h1>{config.headerTitle}</h1>
@@ -111,7 +111,7 @@ class Header extends React.Component {
           }
 
           .logo {
-            border-radius: 65% 75%;
+            border-radius: 15px;
             border: 1px solid #eee;
             display: inline-block;
             height: 44px;

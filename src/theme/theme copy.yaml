@@ -61,7 +61,7 @@ color:
     dark: '#6ca9e6'
     darkActive: '#6ca9e6'
   special:
-    attention: &color-special-attention gold
+    attention: &color-special-attention orange
 # FONT
 font:
   # font options
