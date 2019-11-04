@@ -91,7 +91,7 @@ const Contact = props => {
                     { required: true, message: "Please input your message!", whitespace: true }
                   ]
                 })(
-                  <TextArea name="message" placeholder="" autosize={{ minRows: 4, maxRows: 10 }} />
+                  <TextArea name="message" placeholder="" autoSize={{ minRows: 4, maxRows: 10 }} />
                 )}
               </FormItem>
               <FormItem>
