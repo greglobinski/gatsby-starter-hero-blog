@@ -41,7 +41,8 @@ class Header extends React.Component {
             <img src={avatar} alt={config.siteTitle} />
             </div>
             <div className="type">
-              <h1>{config.headerTitle}</h1>
+              <h1>{config.headerTitle}</h1>  
+
               <h2>{config.headerSubTitle}</h2>
             </div>
           </Link>

@@ -12,8 +12,8 @@ module.exports = {
   authorTwitterAccount: "damianmc",
 
   /* info */
-  headerTitle: "Digital, Media, Cloud",
-  headerSubTitle: "Damian McNamara",
+  headerTitle: "Damian McNamara",
+  headerSubTitle: "Digital, Media, Cloud",
 
   /* manifest.json */
   manifestName: "DMC - Tech Blog",
