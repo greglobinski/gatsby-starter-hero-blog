@@ -13,7 +13,7 @@ module.exports = {
 
   /* info */
   headerTitle: "Damian McNamara",
-  headerSubTitle: "Digital, Media, Cloud",
+  headerSubTitle: "Digital, Media & Cloud",
 
   /* manifest.json */
   manifestName: "DMC - Tech Blog",
