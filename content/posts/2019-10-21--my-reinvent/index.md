@@ -1,7 +1,7 @@
 ---
-title: Reinvent 2019
-category: "how-to"
-cover: photo-1465070845512-2b2dbdc6df66.jpg
+title: New Media Tech at Reinvent 2019
+category: "Media"
+cover: reinvent.jpeg
 author: Damian McNamara
 ---
 

@@ -54,19 +54,19 @@ color:
       k: '#2b2826'
     black: '#000000'
   brand:
-    primary: &color-brand-primary '#6ca9e6'
-    primaryActive: '#6ca9e6'
-    light: '#6ca9e6'
-    lightActive: '#6ca9e6'
-    dark: '#6ca9e6'
-    darkActive: '#6ca9e6'
+    primary: &color-brand-primary '#182978'
+    primaryActive: '#182978'
+    light: '#ACBFE6'
+    lightActive: '#ACBFE6'
+    dark: '#182978'
+    darkActive: '#182978'
   special:
     attention: &color-special-attention gold
 # FONT
 font:
   # font options
   family:
-    initial: 'Arial, sans-serif'
+    initial: 'Open Sans, sans-serif'
     target: &font-family-target 'Open Sans'
   weight:
     standard: 400

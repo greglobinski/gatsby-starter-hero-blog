@@ -1,7 +1,7 @@
 ---
-title: How I got started with Gatsby
-category: "how-to"
-cover: photo-1465070845512-2b2dbdc6df66.jpg
+title: How I built this site - free, fast & secure
+category: "Digital"
+cover: gatsby.jpeg
 author: Damian McNamara
 ---
 
