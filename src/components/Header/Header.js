@@ -87,7 +87,7 @@ class Header extends React.Component {
               color: ${theme.text.color.primary};
 
               .logo {
-                flex-shrink: 0;
+                flex-shrink: 10;
               }
             }
 
@@ -112,14 +112,14 @@ class Header extends React.Component {
           }
 
           .logo {
-            border-radius: 15px;
-            border: 1px solid #eee;
+            border-radius: 0px;
+            border: 0px solid #eee;
             display: inline-block;
-            height: 44px;
+            height: 60px;
             margin: ${theme.space.inline.default};
             overflow: hidden;
-            width: 44px;
-            transition: all 0.5s;
+            width: 60px;
+            transition: all 1.5s;
 
             .homepage & {
               height: 60px;

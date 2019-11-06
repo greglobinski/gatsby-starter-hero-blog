@@ -55,7 +55,7 @@ color:
     black: '#000000'
   brand:
     primary: &color-brand-primary '#182978'
-    primaryActive: '#182978'
+    primaryActive: '#ACBFE6'
     light: '#ACBFE6'
     lightActive: '#ACBFE6'
     dark: '#182978'
