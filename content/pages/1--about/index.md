@@ -2,6 +2,8 @@
 title: About
 ---
 
+<iframe src="/simple-contact-form.html" width="960" height="540"></iframe>
+
 This is a demo site of the [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
 
 ### Features:
