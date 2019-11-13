@@ -5,37 +5,64 @@ cover: gatsby.jpeg
 author: Damian McNamara
 ---
 
-So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly....just another line item on your credit card already stuffed with Digital goodies.
+# Why? 
+So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly....just another line item on your credit card...
 
-However on a noble quest to learn a few new frontend skills and what the heck the cool kids are doing in Javascript framework - React, i thought i'd build a blog and deploy a blog ~ voila few weeks later i've learned heaps that i'm proud to share 
+However on a noble quest to learn a few new frontend development skills and what the heck the cool kids are doing in Javascript frameworks, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned heaps that i'm proud to share. 
 
-Being a tight a$$ and lacking any UX/UI respectability - still hold myself to an unreasonable standard on performance and security - so here were the objectives
-1. Zero cost - nothing to build or to host
-1. Fastest possible performance - make any CDN guru smile
-1. Secure - no Wordpress SQL injections please
+Whilst a tight a$$ and lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on web performance and security - so here were the objectives i set
 
-So after 
+1. **Lowest possible cost** -  to build and host as static site
+1. **Fastest possible performance** - make any CDN guru smile
+1. **Secure** - no Wordpress SQL injection attacks please
+1. **Mobile first** - no discussion required here
+1. **Components based** - leverage best practices and get my head around React JS
+1. **Easy** - at least to maintain and update content with a modern DevOps CI/CI pipeline
 
+# The Solution
 
+It'd be easy to spend months just reviewing all the latest web frameworks and tools - it's clear the world has moved on from my old friend Wordpress (though arguably Wordpress headless CMS is the way to go).
 
-![gatsbyjs.com](./gatsby.jpeg)
+It quickly became clear that [JAM stack](https://jamstack.org/) is where it's all at now - see [Smashing](https://www.smashingmagazine.com/2019/06/jamstack-fundamentals-what-what-how/)
 
-### Vestibulum orci tortor, sollicitudin ac euismod non, placerat ac augue.
+Looking into all these hot new JS projects - [VueJS](https://vuejs.org/), [Hugo](https://gohugo.io/) and [Nuxt](https://nuxtjs.org/) - i stumbled on Gatsby JS and haven't looked back. A comparison between frameworks is [here](https://www.gatsbyjs.org/features/jamstack/gatsby-vs-nextjs-vs-nuxtjs)
 
-Praesent accumsan odio in ante ullamcorper id pellentesque mauris rhoncus. Duis vitae neque dolor. Duis sed purus at eros `bibendum cursus` nec a nulla. Donec turpis quam, ultricies id pretium sit amet, gravida eget leo.
+So [Gatsby JS framework](https://www.gatsbyjs.org/) is my weapon of choice and the delightful documentation meant i was up and running faster then i imagined 
+
+# Results
+So after a lot of trial and error (aka the beauty of forking someone elses hard work off Github) - nailed it! These results i reckon speak for themselves
+
+## Ludicrous Fast - 100% Lighthouse score
+Perfect performance audit score of 100% - earns real cred here from serious Web Dev's!! ![](./speedtest.png)
+
+If you haven't discovered in Chrome Developer mode - [Lighthouse](https://developers.google.com/web/tools/lighthouse) is free and useful to benchmark any site as well as simulating slower networks (3G/4G) using throttling
+
+Google SEO does favour performance and plenty of reseach on users attention span for page loads being far shorter then any goldfish 
+
+## Free
+
+The beauty of Github! Having decided on a framework, there is certainly no shortage of far cleverer folks with beautiful templates just needing CSS tweaks. Kudos to [Greg Lobinski](https://github.com/greglobinski/gatsby-starter-hero-blog) which i forked as the basis to get familiar and site running fast with heaps of useful web components baked in.
+
+Settled on Hosting with [AWS Amplify](https://aws.amazon.com/amplify/) which conveniently made deployment a breeze - highly recommending reviewing for any CI/CD pipelines - not too long ago this was the domain of the DevOps superstar. Today - its free and fast. Having said that [Netlify](https://netlify.com) is absolutely amazing and i would consider if needed more dynamic content and wasn't so vain about leaving options open for CDN configuration and DevOps processes.
+
+Hosting a Progressive Web App using AWS Amplify is effectively dumb storage (a S3 bucket with HTTP server) with Cloudfront CDN - at the modest volumes this site gets (ok make that miniscule), the bill if any is in  cents per month.
+
+## Secure
+
+The short version is that Gatsby is ridiculously secure and any vulnerabilities do get patched 
+
+Enjoy this guide to [Gatsby security](https://www.gatsbyjs.org/blog/2019-04-06-security-for-modern-web-frameworks/) but the key point is that static sites using API (headless CMS) is a bulletproof architecture. 
+
+Cloudfront TLS all the way and should i need WAF rules
+
+Tempting to switch to Fastly - but that will be another post for sure
+
+## Mobile
+
+## Easy
 
 ```javascript
 import { createMuiTheme } from "material-ui/styles";
 import Color from "color";
 import colors from "./colors";
 ```
-
-Proin ornare ligula eu tellus tempus elementum. Aenean bibendum iaculis mi, nec blandit lacus interdum vitae. Vestibulum non nibh risus, a scelerisque purus. Ut vel arcu ac tortor adipiscing hendrerit  vel sed massa. Fusce sem libero, lacinia vulputate interdum non, porttitor non quam. Aliquam sed felis ligula. Duis non nulla magna.
-
-### Donec hendrerit laoreet risus eget adipiscing.
-
-Nullam eros mi, mollis in sollicitudin non, tincidunt sed enim. Sed et felis metus, rhoncus ornare nibh. Ut at magna leo. Suspendisse egestas est ac dolor imperdiet pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam porttitor, erat sit amet venenatis luctus, augue libero ultrices quam, ut congue nisi risus eu purus. Cras semper consectetur elementum. Nulla vel aliquet libero. Vestibulum eget felis nec purus commodo convallis. Aliquam erat volutpat.
-
-![test](./gatsby.jpeg)
-
-Proin suscipit luctus orci placerat fringilla. Suspendisse in urna ligula, a volutpat mauris. Sed enim mi, bibendum eu pulvinar vel, sodales vitae dui. Pellentesque sed sapien lorem, at lacinia urna. In hac habitasse platea dictumst. Vivamus vel justo in leo laoreet ullamcorper non vitae lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum ullamcorper rutrum.
