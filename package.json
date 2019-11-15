@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-hero-blog",
+  "name": "gatsby-blog",
   "version": "2.0.0",
-  "author": "Greg Lobinski <greglobinski@gmail.com>",
+  "author": "Damian McNamara <damian.mcnamara@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "antd": "^3.7.0",
