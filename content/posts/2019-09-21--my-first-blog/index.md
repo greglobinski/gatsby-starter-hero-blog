@@ -8,9 +8,10 @@ author: Damian McNamara
 # Why? 
 So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly....just another line item on your credit card...
 
-However on a noble quest to learn a few new frontend development skills and what the heck the cool kids are doing in Javascript frameworks, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned heaps that i'm proud to share. 
+However on a noble quest to learn a few new frontend development skills and what the heck the cool kids are doing in Javascript frameworks, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned tonnes that i'm proud to share. 
 
-Whilst a tight a$$ and lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on web performance and security - so here were the objectives i set
+Whilst severely lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on cost optimisation (tight a$$) web performance and security. 
+Here were the objectives:
 
 1. **Lowest possible cost** -  to build and host as static site
 1. **Fastest possible performance** - make any CDN guru smile
@@ -20,6 +21,9 @@ Whilst a tight a$$ and lacking in UX/UI design skills  - i still hold myself to 
 1. **Easy** - at least to maintain and update content with a modern DevOps CI/CI pipeline
 
 # The Solution
+
+> * [Gatsby JS](https://www.gatsbyjs.org/)
+> * [AWS Amplify](https://aws.amazon.com/amplify/)
 
 It'd be easy to spend months just reviewing all the latest web frameworks and tools - it's clear the world has moved on from my old friend Wordpress (though arguably Wordpress headless CMS is the way to go).
 
@@ -66,3 +70,29 @@ import { createMuiTheme } from "material-ui/styles";
 import Color from "color";
 import colors from "./colors";
 ```
+
+# Annex 
+
+Credit to [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
+
+### Features included
+
+* Easy editable content in **Markdown** files (posts, pages and parts)
+* **CSS** with `styled-jsx` and `PostCSS`
+* **SEO** (sitemap generation, robot.txt, meta and OpenGraph Tags)
+* **Social** sharing (Twitter, Facebook, Google, LinkedIn)
+* **Comments** (Facebook)
+* **Images** lazy loading and `webp` support (gatsby-image)
+* Post **categories** (category based post list)
+* Full text **searching** (Algolia)
+* **Contact** form (Netlify form handling)
+* **RSS** feed
+* 100% **PWA** (manifest.webmanifest, offline support, favicons)
+* Google **Analytics**
+* App **favicons** generator (node script)
+* Easy customizable base **styles** via `theme` object generated from `yaml` file (fonts, colors, sizes)
+* React **v.16** (gatsby-plugin-react-next)
+* **Components** lazy loading (social sharing)
+* **ESLint** (google config)
+* **Prettier** code styling
+* Webpack `BundleAnalyzerPlugin`
