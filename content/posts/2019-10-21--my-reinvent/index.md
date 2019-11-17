@@ -1,6 +1,6 @@
 ---
 title: New Media Tech at Reinvent 2019
-category: "Media"
+category: "Cloud"
 cover: reinvent.jpeg
 author: Damian McNamara
 ---

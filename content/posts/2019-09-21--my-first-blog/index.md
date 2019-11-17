@@ -10,8 +10,9 @@ So it's not hard to build a slick website these days with template builders like
 
 However on a noble quest to learn a few new frontend development skills and what the heck the cool kids are doing in Javascript frameworks, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned tonnes that i'm proud to share. 
 
-Whilst severely lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on cost optimisation (tight a$$) web performance and security. 
-Here were the objectives:
+# Objectives
+
+Whilst lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on cost optimisation (tight a$$) web performance and security. 
 
 1. **Lowest possible cost** -  to build and host as static site
 1. **Fastest possible performance** - make any CDN guru smile
@@ -24,6 +25,7 @@ Here were the objectives:
 
 > * [Gatsby JS](https://www.gatsbyjs.org/)
 > * [AWS Amplify](https://aws.amazon.com/amplify/)
+> * Markup on Github
 
 It'd be easy to spend months just reviewing all the latest web frameworks and tools - it's clear the world has moved on from my old friend Wordpress (though arguably Wordpress headless CMS is the way to go).
 
