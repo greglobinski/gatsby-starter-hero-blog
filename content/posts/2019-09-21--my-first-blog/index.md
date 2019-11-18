@@ -6,34 +6,34 @@ author: Damian McNamara
 ---
 
 # Why? 
-So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly....just another line item on your credit card...
+So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly, just another line on your credit card...
 
-However on a noble quest to learn a few new frontend development skills and what the heck the cool kids are doing in Javascript frameworks, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned tonnes that i'm proud to share. 
+However on a noble quest to learn a few new frontend development skills and what the heck cool kids are doing in Javascript, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned tonnes that i'm proud to share. 
 
 # Objectives
 
-Whilst lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on cost optimisation (tight a$$) web performance and security. 
+Whilst lacking in UX/UI design skills  - i still hold myself to an unreasonably high standard on cost optimisation (tight a$$), web performance and security. 
 
 1. **Lowest possible cost** -  to build and host as static site
 1. **Fastest possible performance** - make any CDN guru smile
 1. **Secure** - no Wordpress SQL injection attacks please
 1. **Mobile first** - no discussion required here
 1. **Components based** - leverage best practices and get my head around React JS
-1. **Easy** - at least to maintain and update content with a modern DevOps CI/CI pipeline
+1. **Easy** - at least to maintain and update content with a modern DevOps CI/CD pipeline
 
 # The Solution
 
 > * [Gatsby JS](https://www.gatsbyjs.org/)
 > * [AWS Amplify](https://aws.amazon.com/amplify/)
-> * Markup on Github
+> * Markdown on Github
 
-It'd be easy to spend months just reviewing all the latest web frameworks and tools - it's clear the world has moved on from my old friend Wordpress (though arguably Wordpress headless CMS is the way to go).
+It'd be easy to spend months just reviewing all the latest web frameworks and tools - it's clear the world has moved on from my old friend Wordpress. Though arguably Wordpress headless CMS is the way to go until [JAMstack CMS]() gets out of beta at least
 
 It quickly became clear that [JAM stack](https://jamstack.org/) is where it's all at now - see [Smashing](https://www.smashingmagazine.com/2019/06/jamstack-fundamentals-what-what-how/)
 
 Looking into all these hot new JS projects - [VueJS](https://vuejs.org/), [Hugo](https://gohugo.io/) and [Nuxt](https://nuxtjs.org/) - i stumbled on Gatsby JS and haven't looked back. A comparison between frameworks is [here](https://www.gatsbyjs.org/features/jamstack/gatsby-vs-nextjs-vs-nuxtjs)
 
-So [Gatsby JS framework](https://www.gatsbyjs.org/) is my weapon of choice and the delightful documentation meant i was up and running faster then i imagined 
+So [Gatsby JS framework](https://www.gatsbyjs.org/) is my weapon of choice and the delightful documentation meant i was up and running faster then i imagined (but still embarressingly slow for any real frontend Dev)
 
 # Results
 So after a lot of trial and error (aka the beauty of forking someone elses hard work off Github) - nailed it! These results i reckon speak for themselves
@@ -59,13 +59,11 @@ The short version is that Gatsby is ridiculously secure and any vulnerabilities 
 
 Enjoy this guide to [Gatsby security](https://www.gatsbyjs.org/blog/2019-04-06-security-for-modern-web-frameworks/) but the key point is that static sites using API (headless CMS) is a bulletproof architecture. 
 
-Cloudfront TLS all the way and should i need WAF rules
+Cloudfront TLS all the way and should i need more complex WAF rules, can easily apply to Cloudfront
 
-Tempting to switch to Fastly - but that will be another post for sure
+## Mobile First
 
-## Mobile
-
-## Easy
+The beauty of jumping on board Gastsby is it's mobile friendly from ground up, V2 includes layout features and from my perspective it's a matter of picking styled examples from any of the growing list of starters at 
 
 ```javascript
 import { createMuiTheme } from "material-ui/styles";
@@ -73,9 +71,15 @@ import Color from "color";
 import colors from "./colors";
 ```
 
+## Easy to update
+
+All blog content is just Markdown which is compiled dynamically by Gatsby into a page
+
+This means that my CMS is effectively Github - i can draft changes locally and merge into staging, then master. AWS Amplify picks up the changes and Gatsby framework auto renders new content. Could not be easier, bonus being i'm now getting familiar with Markdown.
+
 # Annex 
 
-Credit to [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
+Full credit to [HeroBlog](https://github.com/greglobinski/gatsby-starter-hero-blog), a [GatsbyJS](https://www.gatsbyjs.org/) starter.
 
 ### Features included
 
