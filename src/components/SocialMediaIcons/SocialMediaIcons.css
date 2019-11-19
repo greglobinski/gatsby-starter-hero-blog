@@ -15,21 +15,24 @@
 }
 
 /* Add subtle load-in animation for content on the home page */
-.main-header .social-media-icon {
+.social-media-icon {
     -webkit-animation: fade-in-down 0.9s;
     animation: fade-in-down 0.9s both;
     -webkit-animation-delay: 0.1s;
     animation-delay: 0.1s;
 }
 
-.main-header .social-media-icon .social-svg {
-    color: rgb(255, 255, 255, 0.8);
-}
 
-.main-header .social-media-icon .social-svg:hover {
-    color: #bbc7cc;
+.social-media-icon .social-svg {
+    color: red;
     background: white;
 }
+
+.social-media-icon .social-svg:hover {
+    color: green;
+    background: gold;
+}
+
 
 /* ==========================================================================
        Media Queries - Smaller than 900px

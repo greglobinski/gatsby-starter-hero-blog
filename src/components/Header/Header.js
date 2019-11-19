@@ -42,7 +42,7 @@ class Header extends React.Component {
             <div className="logo">
             <img src={avatar} alt={config.siteTitle} />
             </div>
-
+            <div classname="mainheader">
             <SocialMediaIcons
                 urls={[
                   "https://github.com/haysclark/gatsby-starter-casper",
@@ -50,8 +50,9 @@ class Header extends React.Component {
                   "mailto:gatsbyjs@example.com",
                   "https://www.linkedin.com/in/damian-mcnamara-7771958/"
                 ]}
-                color="white"
+                color="currentColor"
                 />
+                </div>
 
 
           </Link>
