@@ -6,6 +6,7 @@ import Blog from "../components/Blog";
 import Hero from "../components/Hero";
 import Seo from "../components/Seo";
 
+
 class IndexPage extends React.Component {
   separator = React.createRef();
 
@@ -45,6 +46,8 @@ class IndexPage extends React.Component {
             <Hero scrollToContent={this.scrollToContent} backgrounds={backgrounds} theme={theme} />
           )}
         </ThemeContext.Consumer>
+
+
 
         <hr ref={this.separator} />
 

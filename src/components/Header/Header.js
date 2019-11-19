@@ -8,6 +8,8 @@ import config from "../../../content/meta/config";
 import Menu from "../Menu";
 
 import avatar from "../../images/jpg/dmc.jpg";
+import SocialMediaIcons from "../SocialMediaIcons/SocialMediaIcons";
+
 
 class Header extends React.Component {
   state = {
@@ -40,11 +42,18 @@ class Header extends React.Component {
             <div className="logo">
             <img src={avatar} alt={config.siteTitle} />
             </div>
-            <div className="type">
-              <h1>{config.headerTitle}</h1>  
 
-              <h2>{config.headerSubTitle}</h2>
-            </div>
+            <SocialMediaIcons
+                urls={[
+                  "https://github.com/haysclark/gatsby-starter-casper",
+                  "https://twitter.com/gatsbyjs",
+                  "mailto:gatsbyjs@example.com",
+                  "https://www.linkedin.com/in/damian-mcnamara-7771958/"
+                ]}
+                color="white"
+                />
+
+
           </Link>
           <FontLoadedContext.Consumer>
             {loaded => (

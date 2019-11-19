@@ -12,6 +12,9 @@ const Hero = props => {
         <h1>
           Adventures in <strong>Digital, Media &amp; Cloud </strong> Technology
         </h1>
+
+
+
         <button onClick={scrollToContent} aria-label="scroll">
           <FaArrowDown />
         </button>
