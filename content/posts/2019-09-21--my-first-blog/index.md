@@ -6,7 +6,7 @@ author: Damian McNamara
 ---
 
 # Why? 
-~So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly, just another line on your credit card...
+So it's not hard to build a slick website these days with template builders like [Squarespace](https://www.squarespace.com/), which i'd recommend for anyone looking to get going quickly, just another line on your credit card...
 
 However on a noble quest to learn a few new frontend development skills and what the heck cool kids are doing in Javascript, i thought i'd build a modern blog and deployment pipeline ~ voila few weeks later i've learned tonnes that i'm proud to share. 
 
