@@ -42,15 +42,15 @@ class Header extends React.Component {
             <div className="logo">
             <img src={avatar} alt={config.siteTitle} />
             </div>
-            <div classname="mainheader">
+            <div className="mainheader">
             <SocialMediaIcons
                 urls={[
-                  "https://github.com/haysclark/gatsby-starter-casper",
-                  "https://twitter.com/gatsbyjs",
-                  "mailto:gatsbyjs@example.com",
-                  "https://www.linkedin.com/in/damian-mcnamara-7771958/"
+                  "https://www.linkedin.com/in/damian-mcnamara-7771958/",
+                  "https://github.com/digitalvideosherpa",
+                  "https://twitter.com/damian_mcnamara",
+                  "mailto:damian@dmctech.net.au"
                 ]}
-                color="currentColor"
+                color="silver"
                 />
                 </div>
 

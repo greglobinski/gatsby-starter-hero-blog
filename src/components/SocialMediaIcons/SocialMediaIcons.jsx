@@ -9,11 +9,11 @@ class SocialMediaIcons extends React.Component {
       return (
         <div className="social-media-icons">
           {urls.map(url => (
-            <SocialIcon
+            <SocialIcon 
               key={url}
               className="social-media-icon"
               url={url}
-              color={color}
+              bgColor={color}
               style={{ height: null, width: null }}
             />
           ))}
