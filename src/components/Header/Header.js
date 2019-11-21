@@ -42,6 +42,7 @@ class Header extends React.Component {
             <div className="logo">
             <img src={avatar} alt={config.siteTitle} />
             </div>
+            </Link>
             <div className="mainheader">
             <SocialMediaIcons
                 urls={[
@@ -50,12 +51,8 @@ class Header extends React.Component {
                   "https://twitter.com/damian_mcnamara",
                   "mailto:damian@dmctech.net.au"
                 ]}
-                color="silver"
-                />
+                color="silver"/>
                 </div>
-
-
-          </Link>
           <FontLoadedContext.Consumer>
             {loaded => (
               <ScreenWidthContext.Consumer>
@@ -89,38 +86,32 @@ class Header extends React.Component {
             top: 0;
             width: 100%;
             align-items: center;
-
             :global(a.logoType) {
               align-items: center;
               display: flex;
               flex-direction: "column";
               color: ${theme.text.color.primary};
-
               .logo {
                 flex-shrink: 10;
               }
             }
-
             &.homepage {
               position: absolute;
               background-color: transparent;
               height: ${theme.header.height.homepage};
             }
           }
-
           h1 {
             font-size: ${theme.font.size.m};
             font-weight: ${theme.font.weight.standard};
             margin: ${theme.space.stack.xs};
           }
-
           h2 {
             font-weight: ${theme.font.weight.standard};
             font-size: ${theme.font.size.xxs};
             letter-spacing: 0;
             margin: 0;
           }
-
           .logo {
             border-radius: 0px;
             border: 0px solid #eee;
@@ -130,17 +121,14 @@ class Header extends React.Component {
             overflow: hidden;
             width: 60px;
             transition: all 1.5s;
-
             .homepage & {
               height: 60px;
               width: 60px;
             }
-
             img {
               width: 100%;
             }
           }
-
           .sensor {
             display: block;
             position: absolute;
@@ -151,23 +139,19 @@ class Header extends React.Component {
             height: 1px;
             top: ${path === "/" ? theme.header.height.homepage : theme.header.height.default};
           }
-
           @from-width tablet {
             .header {
               padding: ${theme.space.inset.l};
-
               &.homepage {
                 height: ${theme.header.height.homepage};
               }
             }
           }
-
           @below desktop {
             .header.homepage {
               .logo {
                 border: none;
               }
-
               :global(a.logoType),
               h1 {
                 color: ${theme.color.neutral.white};
@@ -177,7 +161,6 @@ class Header extends React.Component {
               }
             }
           }
-
           @from-width desktop {
             .header {
               align-items: center;
@@ -188,7 +171,6 @@ class Header extends React.Component {
               width: 100%;
               justify-content: space-between;
               transition: padding 1.5s;
-
               &.fixed {
                 height: ${theme.header.height.fixed};
                 background-color: ${theme.color.neutral.white};
@@ -198,16 +180,13 @@ class Header extends React.Component {
                 top: 0;
                 width: 100%;
                 z-index: 1;
-
                 h1 {
                   margin: ${theme.space.stack.xxs};
                 }
-
                 h2 {
                   display: none;
                 }
               }
-
               &.homepage:not(.fixed) {
                 :global(a.logoType),
                 h1 {
@@ -218,32 +197,26 @@ class Header extends React.Component {
                 }
               }
             }
-
             .header :global(a.logoType) {
               text-align: left;
               flex-direction: row;
               flex-shrink: 0;
               width: auto;
             }
-
             .logo {
               margin: ${theme.space.inline.default};
-
               .fixed & {
                 height: 36px;
                 width: 36px;
               }
-
               .header.homepage:not(.fixed) & {
                 border: none;
               }
             }
-
             h2 {
               animation-duration: ${theme.time.duration.default};
               animation-name: h2Entry;
             }
-
             @keyframes h2Entry {
               from {
                 opacity: 0;
