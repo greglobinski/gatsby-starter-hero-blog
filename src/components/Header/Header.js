@@ -35,6 +35,9 @@ class Header extends React.Component {
     const { pages, path, theme } = this.props;
     const { fixed } = this.state;
 
+    const mainHeaderStyle={
+      width:"240px", 
+    }
     return (
       <React.Fragment>
         <header className={`header ${this.getHeaderSize()}`}>
@@ -43,7 +46,7 @@ class Header extends React.Component {
             <img src={avatar} alt={config.siteTitle} />
             </div>
             </Link>
-            <div className="mainheader">
+            <div className="mainheader" style={mainHeaderStyle}>
             <SocialMediaIcons
                 urls={[
                   "https://www.linkedin.com/in/damian-mcnamara-7771958/",

@@ -2,5 +2,7 @@
 title: Success
 ---
 
-Thank you. <br />
-I will answer to your message as soon as possible.
+Sent - thank you! <br />
+I will respond as soon as possible.
+regards
+Damian

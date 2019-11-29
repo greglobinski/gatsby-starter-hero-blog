@@ -9,7 +9,7 @@
 
 .social-media-icon {
     display: inline-block;
-    margin: 0rem 0.5rem 0;
+    margin: 0rem 0.1rem 0;
     width: 30px;
     height: 30px;
 }
@@ -33,6 +33,20 @@
     background: gray;
 }
 
+/* ==========================================================================
+       Media Queries - Smaller than 2400px
+   ========================================================================== */
+
+   @media only screen and (max-width: 2400px) {
+    .social-media-icon {
+        display: inline-block;
+        margin: 0rem 0.25rem 0;
+        width: 35px;
+        height: 35px;
+    }
+}
+
+
 
 /* ==========================================================================
        Media Queries - Smaller than 900px
@@ -41,7 +55,7 @@
 @media only screen and (max-width: 900px) {
     .social-media-icon {
         display: inline-block;
-        margin: 0rem 0.5rem 0;
+        margin: 0rem 0.25rem 0;
         width: 35px;
         height: 35px;
     }
@@ -54,7 +68,7 @@
 @media only screen and (max-width: 500px) {
     .social-media-icon {
         display: inline-block;
-        margin: 0rem 0.5rem 0;
+        margin: 0rem 0.25rem 0;
         width: 35px;
         height: 35px;
     }
