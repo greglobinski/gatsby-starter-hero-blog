@@ -52,7 +52,7 @@ class Header extends React.Component {
                   "https://www.linkedin.com/in/damian-mcnamara-7771958/",
                   "https://github.com/digitalvideosherpa",
                   "https://twitter.com/damian_mcnamara",
-                  "mailto:damian@dmctech.net.au"
+                  "mailto:mail@thedmctech.com"
                 ]}
                 color="silver"/>
                 </div>
